@@ -1,0 +1,17 @@
+{
+  "Header": {
+    "logoAlt": "BookInn Logo",
+    "navItems": {
+      "welcome": "Welcome",
+      "whyBookInn": "Why BooInn?",
+      "rooms": "Rooms",
+      "offers": "Offers",
+      "contact": "Contact"
+    },
+    "buttons": {
+      "language": "Language",
+      "search": "Search",
+      "signIn": "Sign In"
+    }
+  }
+}

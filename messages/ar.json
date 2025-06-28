@@ -1,0 +1,17 @@
+{
+  "Header": {
+    "logoAlt": "شعار بوك إن",
+    "navItems": {
+      "welcome": "مرحباً",
+      "whyBookInn": "لماذا بوك إن؟",
+      "rooms": "الغرف",
+      "offers": "العروض",
+      "contact": "اتصل بنا"
+    },
+    "buttons": {
+      "language": "اللغة",
+      "search": "بحث",
+      "signIn": "تسجيل الدخول"
+    }
+  }
+}
