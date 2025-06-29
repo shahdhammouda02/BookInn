@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import React from "react";
-import { BookInnLogo , HeaderLogo} from "../../../../public/images/page";
+import { BookInnLogo, HeaderLogo } from "../../../../public/images/page";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
@@ -14,33 +14,32 @@ import {
 } from "@/components/ui/navigation-menu";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { Bed, Car, Languages, SearchIcon, User } from "lucide-react";
-import { useTranslations } from "next-intl";
-import { BiRestaurant } from "react-icons/bi";
-import { MdEvent } from "react-icons/md";
-import { IoFitness } from "react-icons/io5";
-import { FaServicestack } from "react-icons/fa";
+import { useTranslations, useLocale } from "next-intl";
+import {Restaurant, Event, Fitness, Service} from '@/lib/@react-icons/page';
 
 const Header = () => {
   const t = useTranslations("Header");
+  const locale = useLocale();
+  const isRTL = locale === 'ar';
+
 
   return (
-    <header className="mx-auto px-8 bg-header-background min-h-[500px] relative overflow-hidden dark:bg-header-background">
-      {/* Top Navigation Bar */}
-      <div className="flex h-20 w-full shrink-0 items-center px-6">
-        {/* Logo */}
+    <header
+      className="mx-auto px-8 bg-header-background min-h-[450px] relative overflow-hidden dark:bg-header-background">
+
+      <section
+        className="flex h-20 w-full shrink-0 items-center px-6 mt-2">
         <Link href="#" className="mr-6 flex" prefetch={false}>
           <Image
             src={BookInnLogo}
-            alt={t("Header.logoAlt")}
+            alt={t("logoAlt")}
             width={120}
             height={120}
             className="dark:invert-[0.2]"
           />
         </Link>
-
-        {/* Desktop Navigation */}
         <NavigationMenu className="ml-auto">
-          <NavigationMenuList className="gap-1">
+          <NavigationMenuList className="gap-2">
             {["welcome", "whyBookInn", "rooms", "offers", "contact"].map(
               (item) => (
                 <NavigationMenuItem key={item}>
@@ -61,9 +60,16 @@ const Header = () => {
           </NavigationMenuList>
         </NavigationMenu>
 
-        {/* Action Buttons */}
         <div className="ml-auto flex gap-2">
-          <ThemeToggle />
+          <Button
+            variant="ghost"
+            size="icon"
+            aria-label={t("buttons.language")}
+            className="text-foreground hover:bg-foreground/10 dark:text-foreground dark:hover:bg-foreground/10"
+          >
+            <ThemeToggle />
+          </Button>
+
           <Button
             variant="ghost"
             size="icon"
@@ -88,21 +94,21 @@ const Header = () => {
             {t("buttons.signIn")}
           </Button>
         </div>
-      </div>
+      </section>
 
-      {/* Hero Content */}
-      <div className="absolute left-16 top-1/2 -translate-y-1/2 w-full px-8 text-left space-y-4 max-w-2xl">
+      {/* Hero section */}
+      <section className="absolute left-80 top-1/2 -translate-y-1/2 w-full px-8 text-center space-y-4 max-w-4xl">
         <h1 className="text-5xl font-bold tracking-tight text-foreground dark:text-foreground">
           Where Comfort meets Convenience
         </h1>
         <h3 className="text-xl font-medium text-foreground/80 dark:text-foreground/80">
           Every great trip starts with a perfect place to rest. Find yours with
-          BookInn
+          BookInn.
         </h3>
-      </div>
+      </section>
 
       {/* Quick Links */}
-      <div className="absolute left-16 top-3/4 w-full px-8 text-center space-x-2 max-w-2xl flex">
+      <section className="absolute left-97 top-3/4 w-full px-8 text-center space-x-2 max-w-2xl flex">
         <Button
           size="sm"
           variant="secondary"
@@ -116,7 +122,7 @@ const Header = () => {
           variant="secondary"
           className="bg-background/80 text-foreground hover:bg-background dark:bg-background/80 dark:text-foreground"
         >
-          <BiRestaurant className="h-4 w-4 mr-1" />
+          <Restaurant className="h-4 w-4 mr-1" />
           Restaurant
         </Button>
         <Button
@@ -124,7 +130,7 @@ const Header = () => {
           variant="secondary"
           className="bg-background/80 text-foreground hover:bg-background dark:bg-background/80 dark:text-foreground"
         >
-          <IoFitness className="h-4 w-4 mr-1" />
+          <Fitness className="h-4 w-4 mr-1" />
           Fitness
         </Button>
         <Button
@@ -132,7 +138,7 @@ const Header = () => {
           variant="secondary"
           className="bg-background/80 text-foreground hover:bg-background dark:bg-background/80 dark:text-foreground"
         >
-          <MdEvent className="h-4 w-4 mr-1" />
+          <Event className="h-4 w-4 mr-1" />
           Events
         </Button>
         <Button
@@ -148,10 +154,10 @@ const Header = () => {
           variant="secondary"
           className="bg-background/80 text-foreground hover:bg-background dark:bg-background/80 dark:text-foreground"
         >
-          <FaServicestack className="h-4 w-4 mr-1" />
+          <Service className="h-4 w-4 mr-1" />
           Room Service
         </Button>
-      </div>
+      </section>
     </header>
   );
 };
