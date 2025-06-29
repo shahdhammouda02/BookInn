@@ -11,7 +11,24 @@
     "buttons": {
       "language": "Language",
       "search": "Search",
-      "signIn": "Sign In"
+      "signIn": "Sign In",
+      "themeToggle": "Toggle theme",
+      "light": "Light",
+      "dark": "Dark",
+      "system": "System"
+    },
+    "hero": {
+      "title": "Where Comfort meets Convenience",
+      "subtitle": "Every great trip starts with a perfect place to rest. Find yours with BookInn."
+    },
+    "quickLinks": {
+      "rooms": "Rooms & Suits",
+      "restaurant": "Restaurant",
+      "fitness": "Fitness",
+      "events": "Events",
+      "parking": "Parking",
+      "service": "Room Service"
     }
+  
   }
 }
