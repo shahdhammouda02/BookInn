@@ -15,24 +15,27 @@ import {
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { Bed, Car, SearchIcon, User } from "lucide-react";
 import { useTranslations, useLocale } from "next-intl";
-import { Restaurant, Event, Fitness, Service } from '@/lib/@react-icons/page';
+import { Restaurant, Event, Fitness, Service } from "@/lib/@react-icons/page";
 import LanguageSwitcher from "@/components/languageSwitcher";
 import { useTheme } from "next-themes";
 import { Input } from "@/components/ui/input";
 
 const Header = () => {
   const t = useTranslations("Header");
-  const {theme} = useTheme();
+  const { theme } = useTheme();
   const locale = useLocale();
-  const isRTL = locale === 'ar';
-  const logoSrc = theme === "dark" ? HeaderLogo : BookInnLogo
+  const isRTL = locale === "ar";
+  const logoSrc = theme === "dark" ? HeaderLogo : BookInnLogo;
   const [showSearch, setShowSearch] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
-const searchRef = useRef<HTMLDivElement>(null);
-
+  const searchRef = useRef<HTMLDivElement>(null);
+  
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
+      if (
+        searchRef.current &&
+        !searchRef.current.contains(event.target as Node)
+      ) {
         setShowSearch(false);
       }
     };
@@ -44,11 +47,15 @@ const searchRef = useRef<HTMLDivElement>(null);
   }, []);
   return (
     <header
-      className="mx-auto px-8 bg-header-background min-h-[450px] relative overflow-hidden dark:bg-header-background"
+      className="mx-auto px-8 bg-header-background min-h-[500px] relative overflow-hidden dark:bg-header-background"
       dir={isRTL ? "rtl" : "ltr"}
     >
       <section className="flex h-20 w-full shrink-0 items-center px-6 mt-2">
-        <Link href="#" className={isRTL ? "ml-6 flex" : "mr-6 flex"} prefetch={false}>
+        <Link
+          href="#"
+          className={isRTL ? "ml-6 flex" : "mr-6 flex"}
+          prefetch={false}
+        >
           <Image
             src={logoSrc}
             alt={t("logoAlt")}
@@ -57,33 +64,38 @@ const searchRef = useRef<HTMLDivElement>(null);
             className="dark:invert-[0.2]"
           />
         </Link>
-       <NavigationMenu className={isRTL ? "mr-auto" : "ml-auto"}>
-  <NavigationMenuList className={`gap-3 ${isRTL ? "flex-row-reverse" : ""}`}>
-    {["welcome", "whyBookInn", "rooms", "offers", "contact"].map((item) => (
-      <NavigationMenuItem key={item}>
-        <NavigationMenuLink
-          href="#"
-          className={`${navigationMenuTriggerStyle()} relative px-2 w-auto after:content-[''] after:absolute after:bottom-0 ${
-            isRTL ? "after:right-1/2 after:translate-x-1/2" : "after:left-1/2 after:-translate-x-1/2"
-          } after:w-[calc(100%-1rem)] after:h-[2px] ${
-            item === "welcome"
-              ? "after:bg-chart-2"
-              : "after:bg-chart-2 after:opacity-0 hover:after:opacity-100"
-          } text-foreground hover:text-foreground/80 dark:text-foreground dark:hover:text-foreground/80`}
-        >
-          {t(`navItems.${item}`)}
-        </NavigationMenuLink>
-      </NavigationMenuItem>
-    ))}
-  </NavigationMenuList>
-</NavigationMenu>
-
+        <NavigationMenu className={isRTL ? "mr-auto" : "ml-auto"}>
+          <NavigationMenuList
+            className={`gap-3 ${isRTL ? "flex-row-reverse" : ""}`}
+          >
+            {["welcome", "whyBookInn", "rooms", "offers", "contact"].map(
+              (item) => (
+                <NavigationMenuItem key={item}>
+                  <NavigationMenuLink
+                    href="#"
+                    className={`${navigationMenuTriggerStyle()} relative px-2 w-auto after:content-[''] after:absolute after:bottom-0 ${
+                      isRTL
+                        ? "after:right-1/2 after:translate-x-1/2"
+                        : "after:left-1/2 after:-translate-x-1/2"
+                    } after:w-[calc(100%-1rem)] after:h-[2px] ${
+                      item === "welcome"
+                        ? "after:bg-chart-2"
+                        : "after:bg-chart-2 after:opacity-0 hover:after:opacity-100"
+                    } text-foreground hover:text-foreground/80 dark:text-foreground dark:hover:text-foreground/80`}
+                  >
+                    {t(`navItems.${item}`)}
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+              )
+            )}
+          </NavigationMenuList>
+        </NavigationMenu>
 
         <div className={isRTL ? "mr-auto flex gap-2" : "ml-auto flex gap-2"}>
           <LanguageSwitcher />
           <ThemeToggle />
 
-           <div className="relative" ref={searchRef}>
+          <div className="relative" ref={searchRef}>
             <Button
               variant="ghost"
               size="icon"
@@ -95,8 +107,14 @@ const searchRef = useRef<HTMLDivElement>(null);
             </Button>
 
             {showSearch && (
-              <div className={`absolute ${isRTL ? 'left-0' : 'right-0'} top-full mt-2 z-50`}>
-                <div className={`flex ${isRTL ? 'justify-end' : 'justify-start'}`}>
+              <div
+                className={`absolute ${
+                  isRTL ? "left-0" : "right-0"
+                } top-full mt-2 z-50`}
+              >
+                <div
+                  className={`flex ${isRTL ? "justify-end" : "justify-start"}`}
+                >
                   <Input
                     type="text"
                     placeholder={t("buttons.search")}
@@ -105,7 +123,7 @@ const searchRef = useRef<HTMLDivElement>(null);
                     autoFocus
                     className="w-48 sm:w-64 h-9"
                     onKeyDown={(e) => {
-                      if (e.key === 'Escape') {
+                      if (e.key === "Escape") {
                         setShowSearch(false);
                         setSearchQuery("");
                       }
@@ -126,7 +144,7 @@ const searchRef = useRef<HTMLDivElement>(null);
       </section>
 
       {/* Hero section */}
-      <section 
+      <section
         className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full px-8 text-center space-y-4 max-w-4xl"
         dir={isRTL ? "rtl" : "ltr"}
       >
@@ -140,7 +158,9 @@ const searchRef = useRef<HTMLDivElement>(null);
 
       {/* Quick Links */}
       <section
-        className={`absolute left-1/2 -translate-x-1/2 top-3/4 w-full px-8 text-center max-w-2xl flex gap-2 justify-center ${isRTL ? "flex-row-reverse" : ""}`}
+        className={`absolute left-1/2 -translate-x-1/2 top-3/4 w-full px-8 text-center max-w-2xl flex gap-2 justify-center ${
+          isRTL ? "flex-row-reverse" : ""
+        }`}
         dir={isRTL ? "rtl" : "ltr"}
       >
         <Button
