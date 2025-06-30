@@ -15,7 +15,9 @@
       "themeToggle": "Toggle theme",
       "light": "Light",
       "dark": "Dark",
-      "system": "System"
+      "system": "System",
+      "openMenu": "Open menu",
+      "closeMenu": "Close menu"
     },
     "hero": {
       "title": "Where Comfort meets Convenience",
