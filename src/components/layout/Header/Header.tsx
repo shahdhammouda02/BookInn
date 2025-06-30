@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { BookInnLogo, HeaderLogo } from "../../../../public/images/page";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -18,6 +18,7 @@ import { useTranslations, useLocale } from "next-intl";
 import { Restaurant, Event, Fitness, Service } from '@/lib/@react-icons/page';
 import LanguageSwitcher from "@/components/languageSwitcher";
 import { useTheme } from "next-themes";
+import { Input } from "@/components/ui/input";
 
 const Header = () => {
   const t = useTranslations("Header");
@@ -25,7 +26,22 @@ const Header = () => {
   const locale = useLocale();
   const isRTL = locale === 'ar';
   const logoSrc = theme === "dark" ? HeaderLogo : BookInnLogo
+  const [showSearch, setShowSearch] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+const searchRef = useRef<HTMLDivElement>(null);
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
+        setShowSearch(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
   return (
     <header
       className="mx-auto px-8 bg-header-background min-h-[450px] relative overflow-hidden dark:bg-header-background"
@@ -67,14 +83,38 @@ const Header = () => {
           <LanguageSwitcher />
           <ThemeToggle />
 
-          <Button
-            variant="ghost"
-            size="icon"
-            aria-label={t("buttons.search")}
-            className="text-foreground hover:bg-foreground/10 dark:text-foreground dark:hover:bg-foreground/10"
-          >
-            <SearchIcon className="h-5 w-5" />
-          </Button>
+           <div className="relative" ref={searchRef}>
+            <Button
+              variant="ghost"
+              size="icon"
+              aria-label={t("buttons.search")}
+              className="text-foreground hover:bg-foreground/10 dark:text-foreground dark:hover:bg-foreground/10"
+              onClick={() => setShowSearch(!showSearch)}
+            >
+              <SearchIcon className="h-5 w-5" />
+            </Button>
+
+            {showSearch && (
+              <div className={`absolute ${isRTL ? 'left-0' : 'right-0'} top-full mt-2 z-50`}>
+                <div className={`flex ${isRTL ? 'justify-end' : 'justify-start'}`}>
+                  <Input
+                    type="text"
+                    placeholder={t("buttons.search")}
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    autoFocus
+                    className="w-48 sm:w-64 h-9"
+                    onKeyDown={(e) => {
+                      if (e.key === 'Escape') {
+                        setShowSearch(false);
+                        setSearchQuery("");
+                      }
+                    }}
+                  />
+                </div>
+              </div>
+            )}
+          </div>
           <Button
             variant="default"
             className="bg-chart-2 text-primary-foreground hover:bg-chart-2/90 dark:bg-chart-2 dark:hover:bg-chart-2/80"
