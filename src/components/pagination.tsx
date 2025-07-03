@@ -6,13 +6,16 @@ export function CardPaginationNumbers({
   currentPage,
   totalPages,
   onPageChange,
+  isRTL = false
 }: {
   currentPage: number;
   totalPages: number;
   onPageChange: (page: number) => void;
+    isRTL? : boolean
+
 }) {
   return (
-    <div className="flex items-center justify-center gap-2 mt-8">
+    <div className={`flex items-center justify-center gap-2 mt-8 ${isRTL ? 'flex-row-reverse' : ''}`}>
       <Button
         variant="outline"
         size="icon"
