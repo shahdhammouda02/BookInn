@@ -1,10 +1,11 @@
 import React from 'react'
 import {Home} from '@/features/page'
+import { hotelsData } from '@/data/cardsData'
 
 const page = () => {
   return (
     <main>
-      <Home />
+      <Home hotels={hotelsData}/>
     </main>
   )
 }
