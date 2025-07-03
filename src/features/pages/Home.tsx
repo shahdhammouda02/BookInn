@@ -6,9 +6,9 @@ import { CardPaginationNumbers } from "@/components/pagination";
 import { useLocale, useTranslations } from "next-intl";
 
 export const Home = ({ hotels }: any) => {
-  const t = useTranslations('Home.HotelCard');
+  const t = useTranslations("Home.HotelCard");
   const locale = useLocale();
-  const isRTL = locale === 'ar';
+  const isRTL = locale === "ar";
 
   //Paginations
   const ITEMS_PER_PAGE = 8;

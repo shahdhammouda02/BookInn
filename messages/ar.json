@@ -67,9 +67,7 @@
         "modernLuxuryLocation": "حديث وفاخر",
         "mainSquareLocation": "الساحة الرئيسية",
         "desertRetreatLocation": "منتجع صحراوي"
-      },
-      "priceSuffix": "/ليلة",
-      "currency": "$"
+      }
     }
   }
 }

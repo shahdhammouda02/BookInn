@@ -10,7 +10,7 @@ export interface HotelCard {
   locationKey: string;
   rating: number;
   isFavorite: boolean;
-  price: number;
+  price: string;
 }
 
 export const hotelsData: HotelCard[] = [
@@ -21,7 +21,7 @@ export const hotelsData: HotelCard[] = [
     locationKey: "downtownLocation",
     rating: 4.5,
     isFavorite: false,
-    price: 120
+    price: "$120/night"
   },
   {
     id: 2,
@@ -30,7 +30,7 @@ export const hotelsData: HotelCard[] = [
     locationKey: "beachfrontLocation",
     rating: 4.7,
     isFavorite: true,
-    price: 180
+    price: "$90/night"
   },
   {
     id: 3,
@@ -39,7 +39,7 @@ export const hotelsData: HotelCard[] = [
     locationKey: "suburbsLocation",
     rating: 4.2,
     isFavorite: false,
-    price: 90
+    price: "$170/night"
   },
   {
     id: 4,
@@ -48,7 +48,7 @@ export const hotelsData: HotelCard[] = [
     locationKey: "mountainViewLocation",
     rating: 4.8,
     isFavorite: false,
-    price: 220
+    price: "$220/night"
   },
   {
     id: 5,
@@ -57,7 +57,7 @@ export const hotelsData: HotelCard[] = [
     locationKey: "historicDistrictLocation",
     rating: 4.3,
     isFavorite: false,
-    price: 110
+    price: "$110/night"
   },
   {
     id: 6,
@@ -66,7 +66,7 @@ export const hotelsData: HotelCard[] = [
     locationKey: "lakesideLocation",
     rating: 4.6,
     isFavorite: false,
-    price: 150
+    price: "$150/night"
   },
   {
     id: 7,
@@ -75,7 +75,7 @@ export const hotelsData: HotelCard[] = [
     locationKey: "oceanfrontLocation",
     rating: 4.4,
     isFavorite: false,
-    price: 170
+    price: "$185/night"
   },
   {
     id: 8,
@@ -84,7 +84,7 @@ export const hotelsData: HotelCard[] = [
     locationKey: "cityCenterLocation",
     rating: 4.1,
     isFavorite: false,
-    price: 95
+    price: "$95/night"
   },
   {
     id: 9,
@@ -93,7 +93,7 @@ export const hotelsData: HotelCard[] = [
     locationKey: "botanicalGardensLocation",
     rating: 4.3,
     isFavorite: false,
-    price: 125
+    price: "$290/night"
   },
   {
     id: 10,
@@ -102,7 +102,7 @@ export const hotelsData: HotelCard[] = [
     locationKey: "oldTownLocation",
     rating: 4.2,
     isFavorite: false,
-    price: 105
+    price: "$100/night"
   },
   {
     id: 11,
@@ -111,7 +111,7 @@ export const hotelsData: HotelCard[] = [
     locationKey: "hilltopLocation",
     rating: 4.7,
     isFavorite: false,
-    price: 190
+    price: "$190/night"
   },
   {
     id: 12,
@@ -120,7 +120,7 @@ export const hotelsData: HotelCard[] = [
     locationKey: "modernLuxuryLocation",
     rating: 4.6,
     isFavorite: false,
-    price: 450
+    price: "$450/night"
   },
   {
     id: 13,
@@ -129,7 +129,7 @@ export const hotelsData: HotelCard[] = [
     locationKey: "mainSquareLocation",
     rating: 4.9,
     isFavorite: false,
-    price: 250
+    price: "$250/night"
   },
   {
     id: 14,
@@ -138,6 +138,6 @@ export const hotelsData: HotelCard[] = [
     locationKey: "desertRetreatLocation",
     rating: 4.4,
     isFavorite: false,
-    price: 140
+    price: "$140/night"
   }
 ];
