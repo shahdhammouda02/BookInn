@@ -1,144 +1,143 @@
 import {
-image1,
-  image10,
-image2, image3, image4, image5, image6, image7, image8,
-image9
+  image1, image2, image3, image4, image5, 
+  image6, image7, image8, image9, image10
 } from '../../public/images/page'
+
 export interface HotelCard {
   id: number;
   image: any;
-  title: string;
-  location: string;
+  titleKey: string;
+  locationKey: string;
   rating: number;
   isFavorite: boolean;
-  price: string;
+  price: number;
 }
 
 export const hotelsData: HotelCard[] = [
   {
     id: 1,
     image: image1,
-    title: "BookInn Premium",
-    location: "Downtown, City",
+    titleKey: "premiumTitle",
+    locationKey: "downtownLocation",
     rating: 4.5,
     isFavorite: false,
-    price: "$120/night"
+    price: 120
   },
   {
     id: 2,
     image: image2,
-    title: "BookInn Deluxe",
-    location: "Beachfront, Coastal",
+    titleKey: "deluxeTitle",
+    locationKey: "beachfrontLocation",
     rating: 4.7,
     isFavorite: true,
-    price: "$180/night"
+    price: 180
   },
   {
     id: 3,
     image: image3,
-    title: "BookInn Standard",
-    location: "Suburbs, City",
+    titleKey: "standardTitle",
+    locationKey: "suburbsLocation",
     rating: 4.2,
     isFavorite: false,
-    price: "$90/night"
+    price: 90
   },
   {
     id: 4,
     image: image4,
-    title: "BookInn Luxury",
-    location: "Mountain View",
+    titleKey: "luxuryTitle",
+    locationKey: "mountainViewLocation",
     rating: 4.8,
     isFavorite: false,
-    price: "$220/night"
+    price: 220
   },
   {
     id: 5,
     image: image5,
-    title: "BookInn Boutique",
-    location: "Historic District",
+    titleKey: "boutiqueTitle",
+    locationKey: "historicDistrictLocation",
     rating: 4.3,
     isFavorite: false,
-    price: "$110/night"
+    price: 110
   },
   {
     id: 6,
     image: image6,
-    title: "BookInn Resort",
-    location: "Lakeside",
+    titleKey: "resortTitle",
+    locationKey: "lakesideLocation",
     rating: 4.6,
     isFavorite: false,
-    price: "$150/night"
+    price: 150
   },
   {
     id: 7,
     image: image7,
-    title: "BookInn Resort",
-    location: "Lakeside",
-    rating: 4.6,
+    titleKey: "seasideTitle",
+    locationKey: "oceanfrontLocation",
+    rating: 4.4,
     isFavorite: false,
-    price: "$150/night"
+    price: 170
   },
   {
     id: 8,
     image: image8,
-    title: "BookInn Resort",
-    location: "Lakeside",
-    rating: 4.6,
+    titleKey: "urbanTitle",
+    locationKey: "cityCenterLocation",
+    rating: 4.1,
     isFavorite: false,
-    price: "$150/night"
+    price: 95
   },
   {
     id: 9,
     image: image9,
-    title: "BookInn Garden View",
-    location: "Botanical Gardens Area",
+    titleKey: "gardenViewTitle",
+    locationKey: "botanicalGardensLocation",
     rating: 4.3,
     isFavorite: false,
-    price: "$125/night"
+    price: 125
   },
   {
     id: 10,
     image: image3,
-    title: "BookInn Classic",
-    location: "Old Town Quarter",
+    titleKey: "classicTitle",
+    locationKey: "oldTownLocation",
     rating: 4.2,
     isFavorite: false,
-    price: "$105/night"
+    price: 105
   },
   {
     id: 11,
     image: image7,
-    title: "BookInn Resort",
-    location: "Lakeside",
-    rating: 4.6,
+    titleKey: "panoramaTitle",
+    locationKey: "hilltopLocation",
+    rating: 4.7,
     isFavorite: false,
-    price: "$150/night"
+    price: 190
   },
   {
     id: 12,
     image: image10,
-    title: "BookInn Villa",
-    location: "Modern and luxury",
+    titleKey: "villaTitle",
+    locationKey: "modernLuxuryLocation",
     rating: 4.6,
     isFavorite: false,
-    price: "$450/night"
+    price: 450
   },
   {
     id: 13,
     image: image4,
-   title: "BookInn Luxury",
-    location: "Mountain View",
-    rating: 4.8,
+    titleKey: "grandTitle",
+    locationKey: "mainSquareLocation",
+    rating: 4.9,
     isFavorite: false,
-    price: "$220/night"
+    price: 250
   },
   {
     id: 14,
     image: image8,
-     title: "BookInn Resort",
-    location: "Lakeside",
-    rating: 4.6,
+    titleKey: "oasisTitle",
+    locationKey: "desertRetreatLocation",
+    rating: 4.4,
     isFavorite: false,
-    price: "$150/night"
+    price: 140
   }
 ];

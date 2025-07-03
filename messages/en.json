@@ -3,7 +3,7 @@
     "logoAlt": "BookInn Logo",
     "navItems": {
       "welcome": "Welcome",
-      "whyBookInn": "Why BooInn?",
+      "whyBookInn": "Why BookInn?",
       "rooms": "Rooms",
       "offers": "Offers",
       "contact": "Contact"
@@ -24,13 +24,52 @@
       "subtitle": "Every great trip starts with a perfect place to rest. Find yours with BookInn."
     },
     "quickLinks": {
-      "rooms": "Rooms & Suits",
+      "rooms": "Rooms & Suites",
       "restaurant": "Restaurant",
       "fitness": "Fitness",
       "events": "Events",
       "parking": "Parking",
       "service": "Room Service"
     }
-  
+  },
+  "Home": {
+    "HotelCard": {
+      "addFavorite": "Add to favorites",
+      "removeFavorite": "Remove from favorites",
+      "titles": {
+        "premiumTitle": "BookInn Premium",
+        "deluxeTitle": "BookInn Deluxe",
+        "standardTitle": "BookInn Standard",
+        "luxuryTitle": "BookInn Luxury",
+        "boutiqueTitle": "BookInn Boutique",
+        "resortTitle": "BookInn Resort",
+        "seasideTitle": "BookInn Seaside",
+        "urbanTitle": "BookInn Urban",
+        "gardenViewTitle": "BookInn Garden View",
+        "classicTitle": "BookInn Classic",
+        "panoramaTitle": "BookInn Panorama",
+        "villaTitle": "BookInn Villa",
+        "grandTitle": "BookInn Grand",
+        "oasisTitle": "BookInn Oasis"
+      },
+      "locations": {
+        "downtownLocation": "Downtown, City",
+        "beachfrontLocation": "Beachfront, Coastal",
+        "suburbsLocation": "Suburbs, City",
+        "mountainViewLocation": "Mountain View",
+        "historicDistrictLocation": "Historic District",
+        "lakesideLocation": "Lakeside",
+        "oceanfrontLocation": "Oceanfront",
+        "cityCenterLocation": "City Center",
+        "botanicalGardensLocation": "Botanical Gardens Area",
+        "oldTownLocation": "Old Town Quarter",
+        "hilltopLocation": "Hilltop, Scenic Views",
+        "modernLuxuryLocation": "Modern and Luxury",
+        "mainSquareLocation": "Main Square",
+        "desertRetreatLocation": "Desert Retreat"
+      },
+      "priceSuffix": "/night",
+      "currency": "$"
+    }
   }
 }

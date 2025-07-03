@@ -1,9 +1,9 @@
 {
   "Header": {
-    "logoAlt": "شعار بوك إن",
+    "logoAlt": "شعار BookInn",
     "navItems": {
       "welcome": "مرحباً",
-      "whyBookInn": "لماذا بوك إن؟",
+      "whyBookInn": "لماذا BookInn؟",
       "rooms": "الغرف",
       "offers": "العروض",
       "contact": "اتصل بنا"
@@ -12,22 +12,64 @@
       "language": "اللغة",
       "search": "بحث",
       "signIn": "تسجيل الدخول",
-       "themeToggle": "تغيير الثيم",
+      "themeToggle": "تبديل المظهر",
       "light": "فاتح",
       "dark": "داكن",
-      "system": "نظام الجهاز"
+      "system": "النظام",
+      "openMenu": "فتح القائمة",
+      "closeMenu": "إغلاق القائمة"
     },
     "hero": {
-      "title": "حيث تلتقي الراحة مع الراحة",
-      "subtitle": "تبدأ كل رحلة رائعة بمكان مثالي للراحة. ابحث عن مكانك مع بوك إن."
+      "title": "حيث يلتقي الراحة مع الراحة",
+      "subtitle": "تبدأ كل رحلة رائعة بمكان مثالي للراحة. ابحث عن مكانك مع BookInn."
     },
     "quickLinks": {
       "rooms": "الغرف والأجنحة",
-      "restaurant": "المطعم",
-      "fitness": "اللياقة البدنية",
+      "restaurant": "مطعم",
+      "fitness": "لياقة بدنية",
       "events": "الفعاليات",
-      "parking": "موقف السيارات",
+      "parking": "موقف سيارات",
       "service": "خدمة الغرف"
+    }
+  },
+  "Home": {
+    "HotelCard": {
+      "addFavorite": "إضافة إلى المفضلة",
+      "removeFavorite": "إزالة من المفضلة",
+      "titles": {
+        "premiumTitle": "بوك إن الممتاز",
+        "deluxeTitle": "بوك إن الفاخر",
+        "standardTitle": "بوكإن القياسي",
+        "luxuryTitle": "بوكإن الفاخرة",
+        "boutiqueTitle": "بوكإن البوتيك",
+        "resortTitle": "منتجع بوكإن",
+        "seasideTitle": "بوكإن البحرية",
+        "urbanTitle": "بوكإن الحضرية",
+        "gardenViewTitle": "بوكإن بحديقة المنظر",
+        "classicTitle": "بوكإن الكلاسيكي",
+        "panoramaTitle": "بوكإن بانوراما",
+        "villaTitle": "فيلا بوكإن",
+        "grandTitle": "بوكإن الكبرى",
+        "oasisTitle": "واحة بوكإن"
+      },
+      "locations": {
+        "downtownLocation": "وسط المدينة",
+        "beachfrontLocation": "شاطئ البحر، الساحلي",
+        "suburbsLocation": "ضاحية، المدينة",
+        "mountainViewLocation": "إطلالة جبلية",
+        "historicDistrictLocation": "الحي التاريخي",
+        "lakesideLocation": "بجانب البحيرة",
+        "oceanfrontLocation": "مطل على المحيط",
+        "cityCenterLocation": "وسط المدينة",
+        "botanicalGardensLocation": "منطقة الحدائق النباتية",
+        "oldTownLocation": "الحي القديم",
+        "hilltopLocation": "قمة التل، مناظر خلابة",
+        "modernLuxuryLocation": "حديث وفاخر",
+        "mainSquareLocation": "الساحة الرئيسية",
+        "desertRetreatLocation": "منتجع صحراوي"
+      },
+      "priceSuffix": "/ليلة",
+      "currency": "$"
     }
   }
 }
