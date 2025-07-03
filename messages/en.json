@@ -67,9 +67,7 @@
         "modernLuxuryLocation": "Modern and Luxury",
         "mainSquareLocation": "Main Square",
         "desertRetreatLocation": "Desert Retreat"
-      },
-      "priceSuffix": "/night",
-      "currency": "$"
+      }
     }
   }
 }

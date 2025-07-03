@@ -21,12 +21,12 @@ interface HotelCardProps {
     rating: number;
     isFavorite: boolean;
     price: string;
-  },
+  };
   isRTL?: boolean;
 }
 
 export const HotelCard = ({ hotel, isRTL = false }: HotelCardProps) => {
-  const t = useTranslations('Home.HotelCard');
+  const t = useTranslations("Home.HotelCard");
   const [isFavorite, setIsFavorite] = useState(hotel.isFavorite);
   const [imageError, setImageError] = useState(false);
 
@@ -36,7 +36,11 @@ export const HotelCard = ({ hotel, isRTL = false }: HotelCardProps) => {
   };
 
   return (
-    <Card className={`transition-all duration-300 hover:scale-[1.02] hover:shadow-lg focus:scale-[1.02] focus:shadow-lg outline-none border-border h-full flex flex-col group overflow-hidden ${isRTL ? 'rtl' : ''}`}>
+    <Card
+      className={`transition-all duration-300 hover:scale-[1.02] hover:shadow-lg focus:scale-[1.02] focus:shadow-lg outline-none border-border h-full flex flex-col group overflow-hidden ${
+        isRTL ? "rtl" : ""
+      }`}
+    >
       <CardContent className="p-0 flex-1 relative -mt-[25px]">
         <div className="relative h-48 w-full">
           <Image
@@ -50,15 +54,23 @@ export const HotelCard = ({ hotel, isRTL = false }: HotelCardProps) => {
         </div>
       </CardContent>
 
-     <CardHeader className={`flex flex-col gap-4 py-4 ${isRTL ? 'text-right' : ''}`}>
-        <div className={`flex justify-between items-center w-full ${isRTL ? 'flex-row-reverse' : ''}`}>
+      <CardHeader
+        className={`flex flex-col gap-4 py-4 ${isRTL ? "text-right" : ""}`}
+      >
+        <div
+          className={`flex justify-between items-center w-full ${
+            isRTL ? "flex-row-reverse" : ""
+          }`}
+        >
           <CardTitle className="text-lg font-semibold flex-1">
             {hotel.title}
           </CardTitle>
           <button
             onClick={toggleFavorite}
-            className={`p-2 bg-white/80 rounded-full hover:bg-white transition-colors ${isRTL ? 'mr-4' : 'ml-4'}`}
-            aria-label={isFavorite ? t('removeFavorite') : t('addFavorite')}
+            className={`p-2 bg-white/80 rounded-full hover:bg-white transition-colors ${
+              isRTL ? "mr-4" : "ml-4"
+            }`}
+            aria-label={isFavorite ? t("removeFavorite") : t("addFavorite")}
           >
             <Heart
               className={`w-5 h-5 ${
@@ -68,19 +80,27 @@ export const HotelCard = ({ hotel, isRTL = false }: HotelCardProps) => {
           </button>
         </div>
 
-        <div className={`flex justify-between items-center w-full ${isRTL ? 'flex-row-reverse' : ''}`}>
-          <div className={`flex items-center gap-1 text-sm text-muted-foreground flex-1 ${isRTL ? 'flex-row-reverse' : ''}`}>
+        <div
+          className={`flex justify-between items-center w-full ${
+            isRTL ? "flex-row-reverse" : ""
+          }`}
+        >
+          <div
+            className={`flex items-center gap-1 text-sm text-muted-foreground flex-1 ${
+              isRTL ? "flex-row-reverse" : ""
+            }`}
+          >
             <MapPin className="w-4 h-4" />
             <span>{hotel.location}</span>
           </div>
-          <div className={`flex items-center gap-1 ${isRTL ? 'mr-0' : 'ml-0'}`}>
+          <div className={`flex items-center gap-1 ${isRTL ? "mr-0" : "ml-0"}`}>
             <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
             <span className="text-sm font-medium">{hotel.rating}</span>
           </div>
         </div>
       </CardHeader>
 
-      <CardFooter className={`pt-0 ${isRTL ? 'text-right' : ''}`}>
+      <CardFooter className={`pt-0 ${isRTL ? "text-right" : ""}`}>
         <p className="text-lg font-semibold text-primary">{hotel.price}</p>
       </CardFooter>
     </Card>
