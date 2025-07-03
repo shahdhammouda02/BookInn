@@ -1,6 +1,8 @@
 import {
 image1,
-image2, image3, image4, image5, image6, image7, image8
+  image10,
+image2, image3, image4, image5, image6, image7, image8,
+image9
 } from '../../public/images/page'
 export interface HotelCard {
   id: number;
@@ -31,7 +33,6 @@ export const hotelsData: HotelCard[] = [
     isFavorite: true,
     price: "$180/night"
   },
-  // Add more hotels as needed (8-12 total is good for demo)
   {
     id: 3,
     image: image3,
@@ -47,7 +48,7 @@ export const hotelsData: HotelCard[] = [
     title: "BookInn Luxury",
     location: "Mountain View",
     rating: 4.8,
-    isFavorite: true,
+    isFavorite: false,
     price: "$220/night"
   },
   {
@@ -65,7 +66,7 @@ export const hotelsData: HotelCard[] = [
     title: "BookInn Resort",
     location: "Lakeside",
     rating: 4.6,
-    isFavorite: true,
+    isFavorite: false,
     price: "$150/night"
   },
   {
@@ -74,7 +75,7 @@ export const hotelsData: HotelCard[] = [
     title: "BookInn Resort",
     location: "Lakeside",
     rating: 4.6,
-    isFavorite: true,
+    isFavorite: false,
     price: "$150/night"
   },
   {
@@ -83,7 +84,61 @@ export const hotelsData: HotelCard[] = [
     title: "BookInn Resort",
     location: "Lakeside",
     rating: 4.6,
-    isFavorite: true,
+    isFavorite: false,
     price: "$150/night"
   },
+  {
+    id: 9,
+    image: image9,
+    title: "BookInn Garden View",
+    location: "Botanical Gardens Area",
+    rating: 4.3,
+    isFavorite: false,
+    price: "$125/night"
+  },
+  {
+    id: 10,
+    image: image3,
+    title: "BookInn Classic",
+    location: "Old Town Quarter",
+    rating: 4.2,
+    isFavorite: false,
+    price: "$105/night"
+  },
+  {
+    id: 11,
+    image: image7,
+    title: "BookInn Resort",
+    location: "Lakeside",
+    rating: 4.6,
+    isFavorite: false,
+    price: "$150/night"
+  },
+  {
+    id: 12,
+    image: image10,
+    title: "BookInn Villa",
+    location: "Modern and luxury",
+    rating: 4.6,
+    isFavorite: false,
+    price: "$450/night"
+  },
+  {
+    id: 13,
+    image: image4,
+   title: "BookInn Luxury",
+    location: "Mountain View",
+    rating: 4.8,
+    isFavorite: false,
+    price: "$220/night"
+  },
+  {
+    id: 14,
+    image: image8,
+     title: "BookInn Resort",
+    location: "Lakeside",
+    rating: 4.6,
+    isFavorite: false,
+    price: "$150/night"
+  }
 ];
