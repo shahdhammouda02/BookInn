@@ -273,8 +273,8 @@ const Header = () => {
       >
         <Button
           size="lg"
-          variant="secondary"
-          className="bg-background/80 text-foreground hover:bg-background dark:bg-background/80 dark:text-foreground"
+          variant="default"
+          className="bg-chart-2 text-primary-foreground hover:bg-chart-2/90 dark:bg-chart-2 dark:hover:bg-chart-2/80"
           aria-label={t("quickLinks.rooms")}
         >
           <Bed className="h-8 w-8" />

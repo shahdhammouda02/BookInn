@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { HotelCard } from "@/components/hotel-card";
 import { CardPaginationNumbers } from "@/components/pagination";
 import { useLocale, useTranslations } from "next-intl";
+import Offers from "@/components/offers";
 
 export const Home = ({ hotels }: any) => {
   const t = useTranslations("Home.HotelCard");
@@ -46,6 +47,8 @@ export const Home = ({ hotels }: any) => {
           />
         </div>
       )}
+
+      <Offers />
     </div>
   );
 };
