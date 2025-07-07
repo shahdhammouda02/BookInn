@@ -68,6 +68,14 @@
         "mainSquareLocation": "الساحة الرئيسية",
         "desertRetreatLocation": "منتجع صحراوي"
       }
+    },
+     "Offers" : {
+      "offers": "العروض",
+      "description": "!عروض حصرية في انتظارك\n BookInn استمر في المشاهدة ووفر الكثير مع",
+      "buttons": {
+        "signIn": "تسجيل الدخول",
+        "register": "إنشاء حساب جديد"
+      }
     }
   }
 }

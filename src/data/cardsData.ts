@@ -106,12 +106,12 @@ export const hotelsData: HotelCard[] = [
   },
   {
     id: 11,
-    image: image7,
-    titleKey: "panoramaTitle",
-    locationKey: "hilltopLocation",
-    rating: 4.7,
+    image: image5,
+    titleKey: "boutiqueTitle",
+    locationKey: "historicDistrictLocation",
+    rating: 4.3,
     isFavorite: false,
-    price: "$190/night"
+    price: "$110/night"
   },
   {
     id: 12,
@@ -139,5 +139,41 @@ export const hotelsData: HotelCard[] = [
     rating: 4.4,
     isFavorite: false,
     price: "$140/night"
-  }
+  },
+  {
+    id: 15,
+    image: image9,
+    titleKey: "gardenViewTitle",
+    locationKey: "botanicalGardensLocation",
+    rating: 4.3,
+    isFavorite: false,
+    price: "$290/night"
+  },
+  {
+    id: 16,
+    image: image6,
+    titleKey: "resortTitle",
+    locationKey: "lakesideLocation",
+    rating: 4.6,
+    isFavorite: false,
+    price: "$150/night"
+  },
+  {
+    id: 17,
+    image: image10,
+    titleKey: "villaTitle",
+    locationKey: "modernLuxuryLocation",
+    rating: 4.6,
+    isFavorite: false,
+    price: "$450/night"
+  },
+  {
+    id: 18,
+    image: image1,
+    titleKey: "premiumTitle",
+    locationKey: "downtownLocation",
+    rating: 4.5,
+    isFavorite: false,
+    price: "$120/night"
+  },
 ];

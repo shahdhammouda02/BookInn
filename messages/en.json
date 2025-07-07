@@ -68,6 +68,14 @@
         "mainSquareLocation": "Main Square",
         "desertRetreatLocation": "Desert Retreat"
       }
+    },
+    "Offers" : {
+      "offers": "Offers",
+      "description": " Exclusive offers await!\nKeep watching and save big with Book In today.",
+      "buttons": {
+        "signIn": "Sign In",
+        "register": "Register"
+      }
     }
   }
 }
