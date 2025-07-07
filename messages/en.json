@@ -76,6 +76,25 @@
         "signIn": "Sign In",
         "register": "Register"
       }
+    },
+    "MostRequested": {
+      "sectionTitle": "Most Requested Services",
+      "titles": {
+        "premiumTitle": "Premium Service",
+        "deluxeTitle": "Deluxe Service", 
+        "standardTitle": "Standard Service",
+        "luxuryTitle": "Luxury Service",
+        "boutiqueTitle": "Boutique Service",
+        "resortTitle": "Resort Service",
+        "seasideTitle": "Seaside Service",
+        "urbanTitle": "Urban Service",
+        "gardenViewTitle": "Garden View Service",
+        "classicTitle": "Classic Service",
+        "villaTitle": "Villa Service",
+        "grandTitle": "Grand Service",
+        "oasisTitle": "Oasis Service"
+      }
     }
+    
   }
 }

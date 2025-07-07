@@ -5,6 +5,7 @@ import { HotelCard } from "@/components/hotel-card";
 import { CardPaginationNumbers } from "@/components/pagination";
 import { useLocale, useTranslations } from "next-intl";
 import Offers from "@/components/offers";
+import MostRequestedServices from "@/components/MostRequestedServices";
 
 export const Home = ({ hotels }: any) => {
   const t = useTranslations("Home.HotelCard");
@@ -49,6 +50,7 @@ export const Home = ({ hotels }: any) => {
       )}
 
       <Offers />
+      <MostRequestedServices />
     </div>
   );
 };
