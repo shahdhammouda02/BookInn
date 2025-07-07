@@ -69,12 +69,31 @@
         "desertRetreatLocation": "منتجع صحراوي"
       }
     },
-     "Offers" : {
+    "Offers": {
       "offers": "العروض",
       "description": "!عروض حصرية في انتظارك\n BookInn استمر في المشاهدة ووفر الكثير مع",
       "buttons": {
         "signIn": "تسجيل الدخول",
         "register": "إنشاء حساب جديد"
+      }
+    },
+
+    "MostRequested": {
+      "sectionTitle": "الخدمات الأكثر طلباً",
+      "titles": {
+        "premiumTitle": "خدمة مميزة",
+        "deluxeTitle": "خدمة فاخرة",
+        "standardTitle": "خدمة عادية",
+        "luxuryTitle": "خدمة فاخرة جداً",
+        "boutiqueTitle": "خدمة بوتيك",
+        "resortTitle": "خدمة منتجع",
+        "seasideTitle": "خدمة شاطئية",
+        "urbanTitle": "خدمة حضرية",
+        "gardenViewTitle": "خدمة بإطلالة حدائق",
+        "classicTitle": "خدمة كلاسيكية",
+        "villaTitle": "خدمة فيلا",
+        "grandTitle": "خدمة جراند",
+        "oasisTitle": "خدمة واحة"
       }
     }
   }
