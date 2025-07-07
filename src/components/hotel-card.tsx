@@ -67,7 +67,7 @@ export const HotelCard = ({ hotel, isRTL = false }: HotelCardProps) => {
           </CardTitle>
           <button
             onClick={toggleFavorite}
-            className={`p-2 bg-white/80 rounded-full hover:bg-white transition-colors ${
+            className={`p-2 rounded-full hover:bg-white transition-colors ${
               isRTL ? "mr-4" : "ml-4"
             }`}
             aria-label={isFavorite ? t("removeFavorite") : t("addFavorite")}

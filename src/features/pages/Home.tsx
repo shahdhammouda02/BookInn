@@ -12,7 +12,7 @@ export const Home = ({ hotels }: any) => {
   const isRTL = locale === "ar";
 
   //Paginations
-  const ITEMS_PER_PAGE = 8;
+  const ITEMS_PER_PAGE = 12;
   const [page, setPage] = useState(1);
 
   const paginatedHotels = hotels.slice(
