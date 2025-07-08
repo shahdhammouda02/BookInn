@@ -4,7 +4,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
-import { Header } from "@/components/layout/page";
+import { Footer, Header } from "@/components/layout/page";
 import { Cairo } from "next/font/google";
 
 const cairo = Cairo({
@@ -44,6 +44,7 @@ export default function RootLayout({
           <NextIntlClientProvider>
             <Header />
             <main>{children}</main>
+            <Footer />
           </NextIntlClientProvider>
         </ThemeProvider>
       </body>
