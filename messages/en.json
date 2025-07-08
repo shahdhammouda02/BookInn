@@ -95,6 +95,34 @@
         "oasisTitle": "Oasis Service"
       }
     }
-    
-  }
+  },
+  "Footer": {
+      "about": "An innovative hotel booking platform that combines:",
+      "values": {
+        "simplicity": "Simplicity in hotel discovery and booking",
+        "security": "Secure transactions and data protection",
+        "variety": "Diverse hotel options to suit every traveler"
+      },
+      "sections": {
+        "quickLinks": "Quick Links",
+        "support": "Support",
+        "contact": "Contact Us"
+      },
+      "links": {
+        "home": "Home",
+        "whyBookInn": "Why BookInn?",
+        "services": "Services",
+        "privacyPolicy": "Privacy Policy",
+        "terms": "Terms of Use",
+        "faqs": "FAQs",
+        "howToBook": "How to Book",
+        "contactSupport": "Contact Support",
+        "cancellations": "Cancellations",
+        "reachUs": "Reach us on social media:",
+        "facebook": "Facebook",
+        "twitter": "Twitter",
+        "instagram": "Instagram",
+        "youtube": "YouTube"
+      }
+    }
 }
