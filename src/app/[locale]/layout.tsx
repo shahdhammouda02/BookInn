@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { Footer, Header } from "@/components/layout/page";
 import { Cairo } from "next/font/google";
+import QueryProvider from "@/providers/QueryProvider";
 
 const cairo = Cairo({
   subsets: ["arabic"],
@@ -33,20 +34,23 @@ export default function RootLayout({
   return (
     <html lang={params.locale} suppressHydrationWarning>
       <body
-       suppressHydrationWarning className={`${cairo.variable} antialiased`}
+        suppressHydrationWarning
+        className={`${cairo.variable} antialiased`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <NextIntlClientProvider>
-            <Header />
-            <main>{children}</main>
-            <Footer />
-          </NextIntlClientProvider>
-        </ThemeProvider>
+        <QueryProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <NextIntlClientProvider>
+              <Header />
+              <main>{children}</main>
+              <Footer />
+            </NextIntlClientProvider>
+          </ThemeProvider>
+        </QueryProvider>
       </body>
     </html>
   );
