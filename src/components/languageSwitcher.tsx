@@ -14,7 +14,7 @@ import { Languages } from "lucide-react";
 const LanguageSwitcher = () => {
   const locale = useLocale();
   const router = useRouter();
-  const pathname = usePathname();
+  const pathname: any = usePathname();
 
   const onChangeLang = (lang: string) => {
     const newPath = `/${lang}${pathname.replace(/^\/\w{2}/, "")}`;
