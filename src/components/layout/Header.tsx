@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
-import { BookInnLogo, HeaderLogo } from "../../../../public/images/page";
+import { BookInnLogo, HeaderLogo } from "../../../public/images/page";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
