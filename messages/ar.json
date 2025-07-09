@@ -36,6 +36,8 @@
     "HotelCard": {
       "addFavorite": "إضافة إلى المفضلة",
       "removeFavorite": "إزالة من المفضلة",
+      "loading": "..جاري التحميل",
+      "error": "خطأ",
       "titles": {
         "premiumTitle": "بوك إن الممتاز",
         "deluxeTitle": "بوك إن الفاخر",

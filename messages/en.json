@@ -36,6 +36,8 @@
     "HotelCard": {
       "addFavorite": "Add to favorites",
       "removeFavorite": "Remove from favorites",
+      "loading": "Loading..",
+      "error": "Error",
       "titles": {
         "premiumTitle": "BookInn Premium",
         "deluxeTitle": "BookInn Deluxe",

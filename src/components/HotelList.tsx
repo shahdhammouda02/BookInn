@@ -5,6 +5,7 @@ import { HotelCard } from "@/components/hotel-card";
 import { useCardData } from "@/hooks/useCardData";
 import { useTranslations } from "next-intl";
 import { CardPaginationNumbers } from "@/components/pagination";
+import { hotelsData } from "@/data/cardsData";
 
 export const HotelList = ({ isRTL = false }: { isRTL?: boolean }) => {
   const t = useTranslations("Home.HotelCard");
@@ -13,8 +14,20 @@ export const HotelList = ({ isRTL = false }: { isRTL?: boolean }) => {
   const ITEMS_PER_PAGE = 12;
   const [page, setPage] = useState(1);
 
-  if (isLoading) return <p>Loading hotels...</p>;
-  if (isError) return <p>Failed to load hotels</p>;
+  if (isLoading) {
+    return (
+      <div className="text-center py-12">
+        <p>{t("loading")}</p>
+      </div>
+    );
+  }
+  if (isError || !hotelsData) {
+    return (
+      <div className="text-center py-12 text-red-500">
+        <p>{t("error")}</p>
+      </div>
+    );
+  }
 
   const paginatedHotels =
     data?.slice((page - 1) * ITEMS_PER_PAGE, page * ITEMS_PER_PAGE) || [];
