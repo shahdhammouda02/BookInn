@@ -79,6 +79,8 @@
     },
     "MostRequested": {
       "sectionTitle": "Most Requested Services",
+      "loading": "Loading..",
+      "error": "Error",
       "titles": {
         "premiumTitle": "Premium Service",
         "deluxeTitle": "Deluxe Service", 

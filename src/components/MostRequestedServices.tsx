@@ -1,20 +1,41 @@
-import React from 'react'
-import {Swiper, SwiperSlide} from 'swiper/react'
-import {Autoplay, Pagination, Navigation} from 'swiper/modules'
-import Image from 'next/image'
-import { servicesData } from '@/data/servicesData'
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-import { useTranslations } from 'next-intl'
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import Image from "next/image";
+import { servicesData } from "@/data/servicesData";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { useTranslations } from "next-intl";
+import { useServiceData } from "@/hooks/useServiceData";
 
-const MostRequestedServices = ({isRTL = false}: {isRTL?: boolean}) => {
-    const t = useTranslations('Home.MostRequested');
+const MostRequestedServices = ({ isRTL = false }: { isRTL?: boolean }) => {
+  const t = useTranslations("Home.MostRequested");
+  const { data: servicesData, isLoading, isError } = useServiceData();
+  if (isLoading) {
+    return (
+      <div className="text-center py-12">
+        <p>{t("loading")}</p>
+      </div>
+    );
+  }
+  if (isError || !servicesData) {
+    return (
+      <div className="text-center py-12 text-red-500">
+        <p>{t("error")}</p>
+      </div>
+    );
+  }
 
   return (
-    <section className='mt-18 py-12 bg-background border-0' dir={isRTL ? 'rtl' : ''}>
-      <div className='container mx-auto px-4'>
-        <h2 className='text-3xl font-bold text-center mb-8'>{t('sectionTitle')}</h2>
+    <section
+      className="mt-18 py-12 bg-background border-0"
+      dir={isRTL ? "rtl" : ""}
+    >
+      <div className="container mx-auto px-4">
+        <h2 className="text-3xl font-bold text-center mb-8">
+          {t("sectionTitle")}
+        </h2>
 
         <Swiper
           slidesPerView={1}
@@ -46,7 +67,7 @@ const MostRequestedServices = ({isRTL = false}: {isRTL?: boolean}) => {
               <div className="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-105">
                 <div className="relative h-48">
                   <Image
-                    src={service.image} 
+                    src={service.image}
                     alt={t(`titles.${service.titleKey}`)}
                     fill
                     className="object-cover"
@@ -64,11 +85,11 @@ const MostRequestedServices = ({isRTL = false}: {isRTL?: boolean}) => {
                 </div>
               </div>
             </SwiperSlide>
-          ))}   
+          ))}
         </Swiper>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default MostRequestedServices
+export default MostRequestedServices;
