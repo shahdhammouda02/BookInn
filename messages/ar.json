@@ -80,6 +80,8 @@
 
     "MostRequested": {
       "sectionTitle": "الخدمات الأكثر طلباً",
+      "loading": "..جاري التحميل",
+      "error": "خطأ",
       "titles": {
         "premiumTitle": "خدمة مميزة",
         "deluxeTitle": "خدمة فاخرة",
