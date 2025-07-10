@@ -4,9 +4,9 @@ import { ThemeProvider } from "@/providers/theme-provider";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
-import { Footer, Header } from "@/components/layout/page";
 import { Cairo } from "next/font/google";
 import QueryProvider from "@/providers/QueryProvider";
+import LayoutController from "@/components/layout/LayoutController";
 
 const cairo = Cairo({
   subsets: ["arabic"],
@@ -45,9 +45,9 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             <NextIntlClientProvider>
-              <Header />
-              <main>{children}</main>
-              <Footer />
+              <LayoutController>
+                <main>{children}</main>
+              </LayoutController>
             </NextIntlClientProvider>
           </ThemeProvider>
         </QueryProvider>
