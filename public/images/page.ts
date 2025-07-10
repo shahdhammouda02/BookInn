@@ -10,6 +10,10 @@ import image7 from "./More on Villa Asta.jpg";
 import image8 from "./Premium luxury hotel patio with terrace and sea view_ Vacation relax calm evening party in cinematic scenes Stock Photo _ Adobe Stock.jpg";
 import image9 from "./image9.jpg";
 import image10 from "./image10.jpg";
+import Luxury from './luxury hotel.jpg'
+import modern from './modern.jpg'
+import downlad from './download (7).jpg'
+import tour from './tour.jpg'
 
 export {
   BookInnLogo,
@@ -24,4 +28,8 @@ export {
   image8,
   image9,
   image10,
+  Luxury,
+  modern,
+  downlad,
+  tour
 };
