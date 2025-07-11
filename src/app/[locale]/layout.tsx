@@ -20,13 +20,12 @@ export const metadata: Metadata = {
   description: "Hotel booking app",
 };
 
-export default function RootLayout({
-  children,
-  params,
-}: Readonly<{
+export default async function RootLayout(props: {
   children: React.ReactNode;
   params: { locale: string };
-}>) {
+}) {
+  const { children } = props;
+  const params = await props.params;
   if (!hasLocale(routing.locales, params.locale)) {
     notFound();
   }
