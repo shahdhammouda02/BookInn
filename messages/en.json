@@ -71,7 +71,7 @@
         "desertRetreatLocation": "Desert Retreat"
       }
     },
-    "Offers" : {
+    "Offers": {
       "offers": "Offers",
       "description": " Exclusive offers await!\nKeep watching and save big with Book In today.",
       "buttons": {
@@ -85,7 +85,7 @@
       "error": "Error",
       "titles": {
         "premiumTitle": "Premium Service",
-        "deluxeTitle": "Deluxe Service", 
+        "deluxeTitle": "Deluxe Service",
         "standardTitle": "Standard Service",
         "luxuryTitle": "Luxury Service",
         "boutiqueTitle": "Boutique Service",
@@ -100,33 +100,91 @@
       }
     }
   },
-  "Footer": {
-      "about": "An innovative hotel booking platform that combines:",
-      "values": {
-        "simplicity": "Simplicity in hotel discovery and booking",
-        "security": "Secure transactions and data protection",
-        "variety": "Diverse hotel options to suit every traveler"
-      },
-      "sections": {
-        "quickLinks": "Quick Links",
-        "support": "Support",
-        "contact": "Contact Us"
-      },
-      "links": {
-        "home": "Home",
-        "whyBookInn": "Why BookInn?",
-        "services": "Services",
-        "privacyPolicy": "Privacy Policy",
-        "terms": "Terms of Use",
-        "faqs": "FAQs",
-        "howToBook": "How to Book",
-        "contactSupport": "Contact Support",
-        "cancellations": "Cancellations",
-        "reachUs": "Reach us on social media:",
-        "facebook": "Facebook",
-        "twitter": "Twitter",
-        "instagram": "Instagram",
-        "youtube": "YouTube"
-      }
+  "WhyBookInn": {
+    "hero": {
+      "title": "BookInn - Your Premier Hotel Booking Platform",
+      "subtitle": "Discover seamless hotel bookings with exclusive deals worldwide",
+      "imageAlt": "Luxury hotel booking"
+    },
+    "about": {
+      "title": "About BookInn",
+      "description1": "BookInn is a leading hotel booking platform that provides customers with a seamless and fast booking experience, offering the best deals and discounts for stays at premium hotels worldwide.",
+      "description2": "Whether you're looking for a luxury hotel for a business trip, a family resort for a vacation, or budget-friendly accommodation, WhyBookInn offers diverse options to suit all budgets and needs.",
+      "imageAlt": "Various hotel options"
+    },
+    "services": {
+      "title": "Our Services",
+      "items": [
+        {
+          "text": "Competitive hotel booking prices with exclusive discounts"
+        },
+        {
+          "text": "Diverse options - 5-star hotels to budget accommodations"
+        },
+        {
+          "text": "Secure and fast booking with protected payment"
+        },
+        {
+          "text": "24/7 customer support for all your needs"
+        },
+        {
+          "text": "Genuine reviews from real guests"
+        },
+        {
+          "text": "Advanced search filters for perfect matches"
+        }
+      ]
+    },
+    "whyChooseUs": {
+      "title": "SO, WhyBookInn?",
+      "imageAlt": "Happy traveler",
+      "benefits": [
+        "User-friendly interface for quick booking",
+        "Exclusive offers you won't find elsewhere",
+        "Flexible modification and cancellation policies",
+        "Transparent pricing with no hidden fees",
+        "Personalized recommendations based on your preferences",
+        "Mobile-friendly experience on all devices"
+      ]
+    },
+    "vision": {
+      "title": "Our Vision",
+      "imageAlt": "WhyBookInn team or vision",
+      "description": "At BookInn, we aim to be the premier hotel booking platform by delivering an exceptional experience that combines quality, affordability, and excellent service. We believe your journey begins the moment you book your stay!"
+    },
+    "cta": {
+      "title": "Book with BookInn today and enjoy an unforgettable trip!",
+      "imageAlt": "Background",
+      "button": "Start Booking Now"
     }
+  },
+  "Footer": {
+    "about": "An innovative hotel booking platform that combines:",
+    "values": {
+      "simplicity": "Simplicity in hotel discovery and booking",
+      "security": "Secure transactions and data protection",
+      "variety": "Diverse hotel options to suit every traveler"
+    },
+    "sections": {
+      "quickLinks": "Quick Links",
+      "support": "Support",
+      "contact": "Contact Us"
+    },
+    "links": {
+      "home": "Home",
+      "whyBookInn": "Why BookInn?",
+      "services": "Services",
+      "privacyPolicy": "Privacy Policy",
+      "terms": "Terms of Use",
+      "faqs": "FAQs",
+      "howToBook": "How to Book",
+      "contactSupport": "Contact Support",
+      "cancellations": "Cancellations",
+      "reachUs": "Reach us on social media:",
+      "facebook": "Facebook",
+      "twitter": "Twitter",
+      "instagram": "Instagram",
+      "youtube": "YouTube"
+    }
+  }
 }
