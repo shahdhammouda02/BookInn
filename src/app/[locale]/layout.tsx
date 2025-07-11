@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { ThemeProvider } from "@/providers/theme-provider";
-import { NextIntlClientProvider, hasLocale } from "next-intl";
+import { hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { Cairo } from "next/font/google";
-import QueryProvider from "@/providers/QueryProvider";
-import LayoutController from "@/components/layout/LayoutController";
+import ClientRootProviders from "@/providers/ClientRootProviders";
 
 const cairo = Cairo({
   subsets: ["arabic"],
@@ -20,36 +18,31 @@ export const metadata: Metadata = {
   description: "Hotel booking app",
 };
 
-export default async function RootLayout(props: {
+export default async function RootLayout({
+  children,
+  params,
+}: {
   children: React.ReactNode;
   params: { locale: string };
 }) {
-  const { children } = props;
-  const params = await props.params;
-  if (!hasLocale(routing.locales, params.locale)) {
+  const { locale } = await params;
+  if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
 
+  const messages = await import(`../../../messages/${locale}.json`).then(
+    (mod) => mod.default
+  );
+
   return (
-    <html lang={params.locale} suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <body
         suppressHydrationWarning
         className={`${cairo.variable} antialiased`}
       >
-        <QueryProvider>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <NextIntlClientProvider>
-              <LayoutController>
-                <main>{children}</main>
-              </LayoutController>
-            </NextIntlClientProvider>
-          </ThemeProvider>
-        </QueryProvider>
+        <ClientRootProviders locale={locale} messages={messages}>
+          {children}
+        </ClientRootProviders>
       </body>
     </html>
   );
