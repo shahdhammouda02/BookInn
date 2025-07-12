@@ -1,9 +1,4 @@
-import { hotelsData } from "@/data/cardsData";
+import { hotelsData } from "@/data/cardsData"
+import { Hotel } from "@/types/hotel"
 
-export const fetchCardData = async()=>{
-    return new Promise<typeof hotelsData>((resolve)=>{
-        setTimeout(() => {
-            resolve(hotelsData)
-        }, 500);
-    })
-}
+export const fetchCardData = async (): Promise<Hotel[]> => hotelsData

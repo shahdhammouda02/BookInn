@@ -1,9 +1,4 @@
-import { servicesData } from "@/data/servicesData";
+import { servicesData } from "@/data/servicesData"
+import { Service } from "@/types/service"
 
-export const fetchServicesData = async()=>{
-    return new Promise<typeof servicesData>((resolve)=>{
-        setTimeout(() => {
-            resolve(servicesData)
-        }, 500);
-    })
-}
+export const fetchServicesData = async(): Promise<Service[]> => servicesData
