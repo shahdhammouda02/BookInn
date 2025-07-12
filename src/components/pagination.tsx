@@ -1,34 +1,37 @@
-'use client';
-import { Button } from '@/components/ui/button';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+"use client";
+import { Button } from "@/components/ui/button";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { PaginationProps } from "@/types/page";
 
 export function CardPaginationNumbers({
   currentPage,
   totalPages,
   onPageChange,
-  isRTL = false
-}: {
-  currentPage: number;
-  totalPages: number;
-  onPageChange: (page: number) => void;
-    isRTL? : boolean
-
-}) {
+  isRTL = false,
+}: PaginationProps) {
   return (
-    <div className={`flex items-center justify-center gap-2 mt-8 ${isRTL ? 'flex-row-reverse' : ''}`}>
+    <div
+      className={`flex items-center justify-center gap-2 mt-8 ${
+        isRTL ? "flex-row-reverse" : ""
+      }`}
+    >
       <Button
         variant="outline"
         size="icon"
         disabled={currentPage === 1}
         onClick={() => onPageChange(currentPage - 1)}
       >
-        <ChevronLeft className="h-4 w-4" />
+        {isRTL ? (
+          <ChevronRight className="h-4 w-4" />
+        ) : (
+          <ChevronLeft className="h-4 w-4" />
+        )}
       </Button>
 
       {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
         <Button
           key={page}
-          variant={currentPage === page ? 'default' : 'outline'}
+          variant={currentPage === page ? "default" : "outline"}
           size="icon"
           onClick={() => onPageChange(page)}
         >
@@ -42,7 +45,11 @@ export function CardPaginationNumbers({
         disabled={currentPage === totalPages}
         onClick={() => onPageChange(currentPage + 1)}
       >
-        <ChevronRight className="h-4 w-4" />
+        {isRTL ? (
+          <ChevronLeft className="h-4 w-4" />
+        ) : (
+          <ChevronRight className="h-4 w-4" />
+        )}
       </Button>
     </div>
   );
