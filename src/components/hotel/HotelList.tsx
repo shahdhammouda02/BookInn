@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { HotelCard } from "@/components/hotel-card";
+import { HotelCard } from "@/components/hotel/hotel-card";
 import { useCardData } from "@/hooks/useCardData";
 import { useTranslations } from "next-intl";
 import { CardPaginationNumbers } from "@/components/pagination";
@@ -42,8 +42,8 @@ export const HotelList = ({ isRTL = false }: { isRTL?: boolean }) => {
             hotel={{
               id: hotel.id,
               image: hotel.image ?? "",
-              title: t(`titles.${hotel.titleKey}`),
-              location: t(`locations.${hotel.locationKey}`),
+              titleKey: hotel.titleKey,
+              locationKey: hotel.locationKey,
               rating: hotel.rating ?? 0,
               isFavorite: hotel.isFavorite ?? false,
               price: hotel.price ?? "N/A",

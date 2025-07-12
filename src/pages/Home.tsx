@@ -3,8 +3,8 @@
 import React from "react";
 import { useLocale } from "next-intl";
 import Offers from "@/components/offers";
-import MostRequestedServices from "@/components/MostRequestedServices";
-import { HotelList } from "@/components/HotelList";
+import MostRequestedServices from "@/components/service/MostRequestedServices";
+import { HotelList } from "@/components/hotel/HotelList";
 
 export const Home = () => {
   const locale = useLocale();

@@ -11,19 +11,7 @@ import {
   CardContent,
 } from "@/components/ui/card";
 import { useTranslations } from "next-intl";
-
-interface HotelCardProps {
-  hotel: {
-    id: number;
-    image: string;
-    title: string;
-    location: string;
-    rating: number;
-    isFavorite: boolean;
-    price: string;
-  };
-  isRTL?: boolean;
-}
+import type { HotelCardProps } from "@/types/page";
 
 export const HotelCard = ({ hotel, isRTL = false }: HotelCardProps) => {
   const t = useTranslations("Home.HotelCard");
@@ -45,7 +33,7 @@ export const HotelCard = ({ hotel, isRTL = false }: HotelCardProps) => {
         <div className="relative h-48 w-full">
           <Image
             src={imageError ? "" : hotel.image}
-            alt={hotel.title}
+            alt={hotel.titleKey}
             fill
             className="object-cover rounded-t-lg"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
@@ -63,7 +51,7 @@ export const HotelCard = ({ hotel, isRTL = false }: HotelCardProps) => {
           }`}
         >
           <CardTitle className="text-lg font-semibold flex-1">
-            {hotel.title}
+            {t(`titles.${hotel.titleKey}`)}
           </CardTitle>
           <button
             onClick={toggleFavorite}
@@ -91,7 +79,7 @@ export const HotelCard = ({ hotel, isRTL = false }: HotelCardProps) => {
             }`}
           >
             <MapPin className="w-4 h-4" />
-            <span>{hotel.location}</span>
+            <span>{t(`locations.${hotel.locationKey}`)}</span>
           </div>
           <div className={`flex items-center gap-1 ${isRTL ? "mr-0" : "ml-0"}`}>
             <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
