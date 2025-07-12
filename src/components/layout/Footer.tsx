@@ -14,7 +14,7 @@ const Footer = ({ isRTL = false }: { isRTL?: boolean }) => {
 
   return (
     <footer
-      className="bg-header-background dark:bg-header-background w-full py-12 mt-18"
+      className="bg-header-background dark:bg-header-background w-full py-6 mt-15"
       dir={isRTL ? "rtl" : ""}
     >
       <section className="container mx-auto flex flex-col lg:flex-row flex-wrap gap-y-12 lg:gap-y-0 lg:justify-between px-4">
