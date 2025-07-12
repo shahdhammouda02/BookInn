@@ -1,35 +1,17 @@
 "use client";
 
-import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
-import { BookInnLogo, HeaderLogo } from "../../../public/images/page";
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu";
-import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { Bed, Car, SearchIcon, User, Menu, X } from "lucide-react";
 import { useTranslations, useLocale } from "next-intl";
 import { Restaurant, Event, Fitness, Service } from "@/lib/@react-icons/page";
-import LanguageSwitcher from "@/components/languageSwitcher";
-import { useTheme } from "next-themes";
-import { Input } from "@/components/ui/input";
 import NavBar from "./NavBar";
 
 const Header = () => {
   const t = useTranslations("Header");
-  const { theme } = useTheme();
   const locale = useLocale();
   const isRTL = locale === "ar";
-  const logoSrc = theme === "dark" ? HeaderLogo : BookInnLogo;
   const [showSearch, setShowSearch] = useState(false);
-  const [searchQuery, setSearchQuery] = useState("");
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const searchRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -50,13 +32,14 @@ const Header = () => {
 
   return (
     <header
-      className="mx-auto px-4 sm:px-8 bg-header-background min-h-[700px] sm:min-h-[500px] relative overflow-hidden dark:bg-header-background"
+      className="mx-auto px-4 sm:px-8 bg-header-background min-h-[650px] sm:min-h-[500px] relative overflow-hidden dark:bg-header-background"
       dir={isRTL ? "rtl" : "ltr"}
     >
       <NavBar />
+
       {/* Hero section */}
       <section
-        className="absolute left-4 sm:left-1/2 top-1/2 -translate-y-1/2 sm:-translate-x-1/2 w-[calc(100%-2rem)] sm:w-full px-4 sm:px-8 text-left sm:text-center space-y-4 max-w-4xl"
+        className="absolute left-4 sm:left-1/2 top-[45%] sm:top-1/2 -translate-y-1/2 sm:-translate-x-1/2 w-[calc(100%-2rem)] sm:w-full px-4 sm:px-8 text-left sm:text-center space-y-4 max-w-4xl"
         dir={isRTL ? "rtl" : "ltr"}
       >
         <h1 className="text-4xl sm:text-4xl md:text-5xl font-bold tracking-tight text-foreground dark:text-foreground">
@@ -69,7 +52,7 @@ const Header = () => {
 
       {/* Quick Links */}
       <section
-        className={`absolute left-4 sm:left-1/2 -translate-x-0 sm:-translate-x-1/2 top-[80%] sm:top-3/4 w-[calc(100%-2rem)] sm:w-full px-4 sm:px-8 max-w-4xl flex flex-wrap gap-2 sm:gap-4 justify-start sm:justify-center ${
+        className={`absolute left-4 sm:left-1/2 -translate-x-0 sm:-translate-x-1/2 top-[73%] sm:top-3/4 w-[calc(100%-2rem)] sm:w-full px-4 sm:px-8 max-w-4xl flex flex-wrap gap-1 sm:gap-4 justify-start sm:justify-center ${
           isRTL ? "flex-row-reverse" : ""
         }`}
         dir={isRTL ? "rtl" : "ltr"}
