@@ -1,6 +1,6 @@
 "use client"
+import Home from "@/features/home/Home";
 import React from "react";
-import { Home } from "@/pages/page";
 
 const page = () => {
   return (

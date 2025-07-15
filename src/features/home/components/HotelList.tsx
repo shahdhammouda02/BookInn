@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { HotelCard } from "@/components/hotel/hotel-card";
+import { HotelCard } from "@/features/home/components/HotelCard";
 import { useCardData } from "@/hooks/useCardData";
 import { useTranslations } from "next-intl";
 import { CardPaginationNumbers } from "@/components/pagination";
