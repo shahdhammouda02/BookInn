@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import { Button } from "@/components/ui/button";
-import { Bed, Car, SearchIcon, User, Menu, X } from "lucide-react";
+import { Bed, Car } from "lucide-react";
 import { useTranslations, useLocale } from "next-intl";
 import { Restaurant, Event, Fitness, Service } from "@/lib/@react-icons/page";
 import NavBar from "./NavBar";
@@ -11,24 +11,6 @@ const Header = () => {
   const t = useTranslations("Header");
   const locale = useLocale();
   const isRTL = locale === "ar";
-  const [showSearch, setShowSearch] = useState(false);
-  const searchRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        searchRef.current &&
-        !searchRef.current.contains(event.target as Node)
-      ) {
-        setShowSearch(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
 
   return (
     <header

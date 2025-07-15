@@ -1,5 +1,5 @@
-import {WhyBookInn} from '@/pages/page'
 import React from 'react'
+import WhyBookInn from '@/features/why-book-inn/WhyBookInn'
 
 const whyBookInn = () => {
   return (
