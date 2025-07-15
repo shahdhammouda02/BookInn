@@ -8,7 +8,7 @@ export const VisionSection = () => {
   const t = useTranslations("WhyBookInn");
 
   return (
-    <section className="bg-background/50 dark:bg-background/50 p-10 rounded-xl text-center mb-16">
+    <section className="bg-background/50 dark:bg-background/50 p-10 rounded-xl text-center mb-20">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-3xl font-bold text-foreground dark:text-foreground mb-6">
           {t("vision.title")}

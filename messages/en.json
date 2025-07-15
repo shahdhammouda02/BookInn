@@ -104,7 +104,14 @@
     "hero": {
       "title": "BookInn - Your Premier Hotel Booking Platform",
       "subtitle": "Discover seamless hotel bookings with exclusive deals worldwide",
-      "imageAlt": "Luxury hotel booking"
+      "boxTitle": "Ready for your next great escape?",
+      "boxDescription1": "Imagine waking up in the perfect hotel — cozy, secure, and just where you need it.",
+      "boxDescription2": "Whether you're planning a spontaneous getaway or a long-awaited trip, BookInn gives you instant access to top-rated stays, unbeatable offers, and a smooth booking experience.",
+      "boxDescription3": {
+        "before": "Don’t just book a room —",
+        "highlight": "book peace of mind.",
+        "after": "Start your journey now."
+      }
     },
     "about": {
       "title": "About BookInn",
