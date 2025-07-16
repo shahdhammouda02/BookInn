@@ -194,5 +194,21 @@
       "instagram": "إنستغرام",
       "youtube": "يوتيوب"
     }
+  },
+  "Auth": {
+    "email": "البريد الإلكتروني",
+    "emailPlaceholder": "بريدك@الإلكتروني",
+    "password": "كلمة المرور",
+    "passwordPlaceholder": "••••••••",
+    "rememberMe": "تذكرني",
+    "forgotPassword": "نسيت كلمة المرور؟",
+    "signIn": "تسجيل الدخول",
+    "orContinueWith": "أو تابع باستخدام",
+    "continueWithGoogle": "المتابعة باستخدام جوجل",
+    "dontHaveAccount": "ليس لديك حساب؟",
+    "signUp": "إنشاء حساب جديد",
+    "signInTitle": "تسجيل الدخول إلى BookIn",
+    "signInSubtitle": "أدخل بياناتك للوصول إلى حسابك",
+    "imageAlt": "رسم توضيحي لـ BookInn"
   }
 }
