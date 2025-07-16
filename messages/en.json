@@ -193,5 +193,21 @@
       "instagram": "Instagram",
       "youtube": "YouTube"
     }
+  },
+  "Auth": {
+    "email": "Email",
+    "emailPlaceholder": "your@email.com",
+    "password": "Password",
+    "passwordPlaceholder": "••••••••",
+    "rememberMe": "Remember me",
+    "forgotPassword": "Forgot password?",
+    "signIn": "Sign In",
+    "orContinueWith": "Or continue with",
+    "continueWithGoogle": "Continue with Google",
+    "dontHaveAccount": "Don't have an account?",
+    "signUp": "Sign up",
+    "signInTitle": "Sign In with BookIn",
+    "signInSubtitle": "Enter your credentials to access your account",
+    "imageAlt": "BookInn illustration"
   }
 }

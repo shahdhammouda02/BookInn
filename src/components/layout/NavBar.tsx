@@ -128,6 +128,7 @@ const NavBar = () => {
             </div>
           )}
         </div>
+        <Link href="/auth/signIn">
         <Button
           variant="default"
           className="bg-chart-2 text-primary-foreground hover:bg-chart-2/90 dark:bg-chart-2 dark:hover:bg-chart-2/80"
@@ -135,6 +136,7 @@ const NavBar = () => {
           <User className={`h-5 w-5 ${isRTL ? "ml-1" : "mr-1"}`} />
           {t("buttons.signIn")}
         </Button>
+      </Link>
       </div>
 
       <Button
