@@ -1,8 +1,7 @@
-"use client";
-
-import { useTranslations } from "next-intl";
-import { LoginFormValues, loginSchema } from "@/auth/schemas/auth";
+"use client"
+import React from "react";
 import { useForm } from "react-hook-form";
+import { LoginFormValues, loginSchema } from "../schemas/auth";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
   Form,
@@ -15,93 +14,77 @@ import {
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Checkbox } from "@/components/ui/checkbox";
 import { FaGoogle } from "@/lib/@react-icons/page";
+import { useTranslations } from "next-intl";
 
-const SignInForm = () => {
-  const t = useTranslations("Auth");
-  const schema = loginSchema(t);
+const RegisterForm = () => {
+    const t = useTranslations('Auth')
 
-  const form = useForm<LoginFormValues>({
+    const schema = loginSchema(t)
+
+    const form = useForm<LoginFormValues>({
     resolver: zodResolver(schema),
     defaultValues: {
+      username: "",
       email: "",
       password: "",
-      remember: false,
     },
   });
 
   async function onSubmit(values: LoginFormValues) {
     console.log(values);
   }
-
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
         <FormField
+          control={form.control}
+          name="username"
+          render={({ field }) => (
+            <FormItem className="space-y-2">
+              <FormLabel>{t("username")}</FormLabel>
+              <FormControl>
+                <Input placeholder={t('usernamePlaceholder')} {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+         <FormField
           control={form.control}
           name="email"
           render={({ field }) => (
             <FormItem className="space-y-2">
               <FormLabel>{t("email")}</FormLabel>
               <FormControl>
-                <Input placeholder={t("emailPlaceholder")} {...field} />
+                <Input placeholder={t('emailPlaceholder')} {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
 
-        <FormField
+         <FormField
           control={form.control}
           name="password"
           render={({ field }) => (
             <FormItem className="space-y-2">
               <FormLabel>{t("password")}</FormLabel>
               <FormControl>
-                <Input
-                  type="password"
-                  placeholder={t("passwordPlaceholder")}
-                  {...field}
-                />
+                <Input type="password" placeholder={t('passwordPlaceholder')} {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
 
-        <div className="flex items-center justify-between">
-          <FormField
-            control={form.control}
-            name="remember"
-            render={({ field }) => (
-              <FormItem className="flex items-center space-x-2 rtl:space-x-reverse">
-                <FormControl>
-                  <Checkbox
-                    checked={field.value}
-                    onCheckedChange={field.onChange}
-                  />
-                </FormControl>
-                <FormLabel className="!mt-0 cursor-pointer">
-                  {t("rememberMe")}
-                </FormLabel>
-              </FormItem>
-            )}
-          />
-          <Link
-            href="/reset-password"
-            className="text-sm font-medium text-primary hover:underline"
-          >
-            {t("forgotPassword")}
-          </Link>
-        </div>
-
-        <Button
+       <Button
           type="submit"
           className="w-full"
           disabled={form.formState.isSubmitting}
         >
-          {t("signIn")}
+          {t("signUp")}
         </Button>
 
         <div className="relative">
@@ -127,12 +110,12 @@ const SignInForm = () => {
         </Button>
 
         <div className="text-center text-sm">
-          {t("dontHaveAccount")}{" "}
+          {t("haveAnAccount")}{" "}
           <Link
-            href="/auth/register"
+            href="/auth/signIn"
             className="font-bold text-chart-2 hover:underline"
           >
-            {t("signUp")}
+            {t("signIn")}
           </Link>
         </div>
       </form>
@@ -140,4 +123,4 @@ const SignInForm = () => {
   );
 };
 
-export default SignInForm;
+export default RegisterForm;

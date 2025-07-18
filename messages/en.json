@@ -195,6 +195,8 @@
     }
   },
   "Auth": {
+    "username": "Username",
+    "usernamePlaceholder": "username",
     "email": "Email",
     "emailPlaceholder": "your@email.com",
     "password": "Password",
@@ -205,9 +207,25 @@
     "orContinueWith": "Or continue with",
     "continueWithGoogle": "Continue with Google",
     "dontHaveAccount": "Don't have an account?",
+    "haveAnAccount": "Do you Have an account?",
     "signUp": "Sign up",
-    "signInTitle": "Sign In with BookIn",
-    "signInSubtitle": "Enter your credentials to access your account",
-    "imageAlt": "BookInn illustration"
+    "signInTitle": "Sign In with BookInn",
+    "signInSubtitle": "Welcome back, friend!",
+    "signUpTitle": "Join BookInn",
+    "signUpSubtitle": "Become a special member and enjoy a unique experience",
+    "imageAlt": "BookInn illustration",
+    "schema": {
+      "username": {
+        "min": "Username must be at least 2 characters long",
+        "max": "Username cannot exceed 20 characters",
+        "regex": "Username must start with a letter and can only contain letters and numbers"
+      },
+      "email": {
+        "invalid": "Invalid email address"
+      },
+      "password": {
+        "min": "Password must be at least 8 characters"
+      }
+    }
   }
 }

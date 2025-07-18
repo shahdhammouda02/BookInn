@@ -196,6 +196,8 @@
     }
   },
   "Auth": {
+    "username": "الاسم كاملاً",
+    "usernamePlaceholder": "اسم المستخدم",
     "email": "البريد الإلكتروني",
     "emailPlaceholder": "بريدك@الإلكتروني",
     "password": "كلمة المرور",
@@ -206,9 +208,25 @@
     "orContinueWith": "أو تابع باستخدام",
     "continueWithGoogle": "المتابعة باستخدام جوجل",
     "dontHaveAccount": "ليس لديك حساب؟",
+    "haveAnAccount": "هل لديك حساب؟",
     "signUp": "إنشاء حساب جديد",
-    "signInTitle": "تسجيل الدخول إلى BookIn",
-    "signInSubtitle": "أدخل بياناتك للوصول إلى حسابك",
-    "imageAlt": "رسم توضيحي لـ BookInn"
+    "signInTitle": "تسجيل الدخول إلى BookInn",
+    "signInSubtitle": "مرحباَ بك مجدداً صديقنا! ",
+    "signUpTitle": "انضم إلى BookInn",
+    "signUpSubtitle": "كن واحدًا من أصدقائنا المميزين واستمتع بتجربة فريدة ",
+    "imageAlt": "رسم توضيحي لـ BookInn",
+    "schema": {
+      "username": {
+        "min": "يجب أن يكون اسم المستخدم مكونًا من حرفين على الأقل",
+        "max": "لا يمكن أن يتجاوز اسم المستخدم 20 حرفًا",
+        "regex": "يجب أن يبدأ اسم المستخدم بحرف ويحتوي على أحرف وأرقام فقط"
+      },
+      "email": {
+        "invalid": "بريد إلكتروني غير صالح"
+      },
+      "password": {
+        "min": "يجب أن تتكون كلمة المرور من 8 أحرف على الأقل"
+      }
+    }
   }
 }

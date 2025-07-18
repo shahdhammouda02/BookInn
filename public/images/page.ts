@@ -14,6 +14,7 @@ import Luxury from './luxury hotel.jpg'
 import modern from './modern.jpg'
 import downlad from './download (7).jpg'
 import tour from './tour.jpg'
+import register from './register.jpg'
 
 export {
   BookInnLogo,
@@ -31,5 +32,6 @@ export {
   Luxury,
   modern,
   downlad,
-  tour
+  tour,
+  register
 };
