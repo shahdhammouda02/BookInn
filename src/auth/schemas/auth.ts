@@ -2,12 +2,19 @@ import { z } from "zod";
 
 export const loginSchema = (t: (key: string) => string) => {
   return z.object({
-    username: z
+    firstName: z
       .string()
-      .min(2, { message: t("schema.username.min") })
-      .max(50, { message: t("schema.username.max") })
-      .regex(/^[a-zA-Z][a-zA-Z0-9]*$/, {
-        message: t("schema.username.regex"),
+      .min(2, { message: t("schema.firstName.min") })
+      .max(50, { message: t("schema.firstName.max") })
+      .regex(/^[a-zA-Z\u0600-\u06FF]/, {
+        message: t("schema.firstName.startWithLetter"),
+      }),
+    lastName: z
+      .string()
+      .min(2, { message: t("schema.lastName.min") })
+      .max(50, { message: t("schema.lastName.max") })
+      .regex(/^[a-zA-Z\u0600-\u06FF]/, { 
+        message: t("schema.lastName.startWithLetter"),
       }),
     email: z.string().email(t("schema.email.invalid")),
     password: z.string().min(8, t("schema.password.min")),
@@ -15,7 +22,8 @@ export const loginSchema = (t: (key: string) => string) => {
   });
 };
 export type LoginFormValues = {
-  username: string;
+  firstName: string;
+  lastName: string;
   email: string;
   password: string;
   remember?: boolean;
