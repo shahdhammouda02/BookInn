@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { LoginFormValues, loginSchema } from "../schemas/auth";
@@ -18,14 +18,15 @@ import { FaGoogle } from "@/lib/@react-icons/page";
 import { useTranslations } from "next-intl";
 
 const RegisterForm = () => {
-    const t = useTranslations('Auth')
+  const t = useTranslations("Auth");
 
-    const schema = loginSchema(t)
+  const schema = loginSchema(t);
 
-    const form = useForm<LoginFormValues>({
+  const form = useForm<LoginFormValues>({
     resolver: zodResolver(schema),
     defaultValues: {
-      username: "",
+      firstName: "",
+      lastName: "",
       email: "",
       password: "",
     },
@@ -37,49 +38,68 @@ const RegisterForm = () => {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-        <FormField
-          control={form.control}
-          name="username"
-          render={({ field }) => (
-            <FormItem className="space-y-2">
-              <FormLabel>{t("username")}</FormLabel>
-              <FormControl>
-                <Input placeholder={t('usernamePlaceholder')} {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+        <div className="flex gap-4">
+          <FormField
+            control={form.control}
+            name="firstName"
+            render={({ field }) => (
+              <FormItem className="space-y-2 flex-1">
+                <FormLabel>{t("firstName")}</FormLabel>
+                <FormControl>
+                  <Input {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="lastName"
+            render={({ field }) => (
+              <FormItem className="space-y-2 flex-1">
+                <FormLabel>{t("lastName")}</FormLabel>
+                <FormControl>
+                  <Input {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </div>
 
-         <FormField
+        <FormField
           control={form.control}
           name="email"
           render={({ field }) => (
             <FormItem className="space-y-2">
               <FormLabel>{t("email")}</FormLabel>
               <FormControl>
-                <Input placeholder={t('emailPlaceholder')} {...field} />
+                <Input placeholder={t("emailPlaceholder")} {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
 
-         <FormField
+        <FormField
           control={form.control}
           name="password"
           render={({ field }) => (
             <FormItem className="space-y-2">
               <FormLabel>{t("password")}</FormLabel>
               <FormControl>
-                <Input type="password" placeholder={t('passwordPlaceholder')} {...field} />
+                <Input
+                  type="password"
+                  placeholder={t("passwordPlaceholder")}
+                  {...field}
+                />
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
 
-       <Button
+        <Button
           type="submit"
           className="w-full"
           disabled={form.formState.isSubmitting}

@@ -195,7 +195,8 @@
     }
   },
   "Auth": {
-    "username": "Username",
+    "firstName": "First Name",
+    "lastName": "Last Name",
     "usernamePlaceholder": "username",
     "email": "Email",
     "emailPlaceholder": "your@email.com",
@@ -215,10 +216,15 @@
     "signUpSubtitle": "Become a special member and enjoy a unique experience",
     "imageAlt": "BookInn illustration",
     "schema": {
-      "username": {
-        "min": "Username must be at least 2 characters long",
-        "max": "Username cannot exceed 20 characters",
-        "regex": "Username must start with a letter and can only contain letters and numbers"
+      "firstName": {
+        "min": "First name must be at least 2 characters",
+        "max": "First name must be at most 20 characters",
+        "startWithLetter": "First name must start with a letter"
+      },
+      "lastName": {
+        "min": "Last name must be at least 2 characters",
+        "max": "Last name must be at most 20 characters",
+        "startWithLetter": "Last name must start with a letter"
       },
       "email": {
         "invalid": "Invalid email address"
