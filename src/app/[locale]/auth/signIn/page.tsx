@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { image6 } from "../../../../../public/images/page";
-import SignInForm from "@/auth/sign-in/components/SignInForm";
+import SignInForm from "@/auth/sign-in/SignInForm";
 import { useTranslations } from "next-intl";
 
 const SignIn = () => {

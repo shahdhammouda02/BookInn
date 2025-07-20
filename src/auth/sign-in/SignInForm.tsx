@@ -17,6 +17,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { FaGoogle } from "@/lib/@react-icons/page";
+import { signIn } from "next-auth/react";
 
 const SignInForm = () => {
   const t = useTranslations("Auth");
@@ -119,6 +120,7 @@ const SignInForm = () => {
           variant="outline"
           type="button"
           className="w-full border-gray-300 hover:bg-gray-50"
+          onClick={() => signIn("google", { callbackUrl: "/" })}
         >
           <FaGoogle className="h-4 w-4 text-[#4285F4] ltr:mr-2 rtl:ml-2" />
           <span className="text-gray-700 dark:text-gray-400">
@@ -130,6 +132,7 @@ const SignInForm = () => {
           {t("dontHaveAccount")}{" "}
           <Link
             href="/auth/register"
+            prefetch
             className="font-bold text-chart-2 hover:underline"
           >
             {t("signUp")}

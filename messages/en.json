@@ -1,6 +1,8 @@
 {
   "Header": {
     "logoAlt": "BookInn Logo",
+    "welcome": "Welcome",
+    "loading": "Loading..",
     "navItems": {
       "welcome": "Welcome",
       "whyBookInn": "Why BookInn?",
@@ -12,6 +14,7 @@
       "language": "Language",
       "search": "Search",
       "signIn": "Sign In",
+      "signOut": "Sign Out",
       "themeToggle": "Toggle theme",
       "light": "Light",
       "dark": "Dark",

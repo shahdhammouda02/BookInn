@@ -1,6 +1,8 @@
 {
   "Header": {
     "logoAlt": "شعار BookInn",
+    "welcome": "أهلاً بك",
+    "loading": "..جاري التحميل",
     "navItems": {
       "welcome": "مرحباً",
       "whyBookInn": "؟ BookInn لماذا",
@@ -12,6 +14,7 @@
       "language": "اللغة",
       "search": "بحث",
       "signIn": "تسجيل الدخول",
+      "signOut": "تسجيل الخروج",
       "themeToggle": "تبديل المظهر",
       "light": "فاتح",
       "dark": "داكن",

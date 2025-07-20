@@ -16,6 +16,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { FaGoogle } from "@/lib/@react-icons/page";
 import { useTranslations } from "next-intl";
+import { signIn } from "next-auth/react";
 
 const RegisterForm = () => {
   const t = useTranslations("Auth");
@@ -122,6 +123,7 @@ const RegisterForm = () => {
           variant="outline"
           type="button"
           className="w-full border-gray-300 hover:bg-gray-50"
+          onClick={() => signIn("google", { callbackUrl: "/" })}
         >
           <FaGoogle className="h-4 w-4 text-[#4285F4] ltr:mr-2 rtl:ml-2" />
           <span className="text-gray-700 dark:text-gray-400">

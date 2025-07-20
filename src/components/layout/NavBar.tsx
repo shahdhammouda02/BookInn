@@ -14,10 +14,17 @@ import {
   NavigationMenuList,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { SearchIcon, User, Menu, X } from "lucide-react";
+import { SearchIcon, User, Menu, X, LogOut } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import LanguageSwitcher from "@/components/languageSwitcher";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
+import { useSession, signOut } from "next-auth/react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuLabel,
+  DropdownMenuTrigger,
+} from "../ui/dropdown-menu";
 
 const NavBar = () => {
   const t = useTranslations("Header");
@@ -29,6 +36,7 @@ const NavBar = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const searchRef = useRef<HTMLDivElement>(null);
+  const { data: session, status } = useSession();
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -48,10 +56,10 @@ const NavBar = () => {
 
   return (
     <section
-      className="min-h-[80px] flex items-center px-4 sm:px-8 w-full mx-auto justify-between"
+      className="min-h-[80px] flex items-center px-2 sm:px-8 w-full mx-auto justify-between"
       dir={isRTL ? "rtl" : "ltr"}
     >
-      <Link href="#" className="flex" prefetch={false}>
+      <Link href="#" className="flex" prefetch>
         <Image
           src={logoSrc}
           alt={t("logoAlt")}
@@ -128,15 +136,47 @@ const NavBar = () => {
             </div>
           )}
         </div>
-        <Link href="/auth/signIn">
-        <Button
-          variant="default"
-          className="bg-chart-2 text-primary-foreground hover:bg-chart-2/90 dark:bg-chart-2 dark:hover:bg-chart-2/80"
-        >
-          <User className={`h-5 w-5 ${isRTL ? "ml-1" : "mr-1"}`} />
-          {t("buttons.signIn")}
-        </Button>
-      </Link>
+
+        {status === "loading" ? (
+          <p className="text-sm">{t("loading")}</p>
+        ) : session ? (
+          <>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="text-foreground hover:bg-foreground/10 dark:text-foreground dark:hover:bg-foreground/10"
+                  aria-label="Account"
+                >
+                  <User className="h-5 w-5" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align={isRTL ? "start" : "end"}>
+                <DropdownMenuLabel className="text-sm">
+                  {t("welcome")}, {session.user?.name}
+                </DropdownMenuLabel>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            <Button
+              onClick={() => signOut()}
+              className="bg-chart-2 text-primary-foreground hover:bg-chart-2/90 dark:bg-chart-2 dark:hover:bg-chart-2/80"
+            >
+              {t("buttons.signOut")}
+            </Button>
+          </>
+        ) : (
+          <Link href="/auth/signIn" prefetch>
+            <Button
+              variant="default"
+              className="bg-chart-2 text-primary-foreground hover:bg-chart-2/90 dark:bg-chart-2 dark:hover:bg-chart-2/80"
+            >
+              <User className={`h-5 w-5 ${isRTL ? "ml-1" : "mr-1"}`} />
+              {t("buttons.signIn")}
+            </Button>
+          </Link>
+        )}
       </div>
 
       <Button
@@ -169,69 +209,164 @@ const NavBar = () => {
                   onClick={() => setMobileMenuOpen(false)}
                 />
               </div>
+
+              <div
+                className={`flex flex-col gap-3 ${
+                  isRTL ? "items-start px-2" : "items-start"
+                }`}
+              >
+                {status === "loading" ? (
+                  <p className="text-sm text-muted-foreground">
+                    {t("loading")}
+                  </p>
+                ) : session ? (
+                  <>
+                    <p className="text-sm text-foreground">
+                      {t("welcome")},{" "}
+                      <span className="font-semibold text-chart-2">
+                        {session.user?.name}
+                      </span>
+                    </p>
+                  </>
+                ) : null}
+              </div>
+
               {["welcome", "whyBookInn", "rooms", "offers", "contact"].map(
                 (item) => (
                   <Link
                     key={item}
                     href={`/${locale}${item === "welcome" ? "" : `/${item}`}`}
-                    className={`text-xl py-3 text-foreground hover:text-chart-2 dark:text-foreground dark:hover:text-chart-2`}
+                    className="block w-full text-start px-2 text-lg py-3 text-foreground hover:text-chart-2 dark:text-foreground dark:hover:text-chart-2"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     {t(`navItems.${item}`)}
                   </Link>
                 )
               )}
+
               <div
-                className={`flex items-center ${
-                  isRTL ? "flex-row-reverse" : ""
-                } justify-between pt-6`}
+                className={`flex flex-wrap items-center ${
+                  isRTL
+                    ? "flex-row-reverse items-end justify-end"
+                    : "justify-start"
+                } gap-2 sm:gap-4 pt-6`}
+                dir={isRTL ? "rtl" : "ltr"}
               >
-                <div
-                  className={`flex items-center ${
-                    isRTL ? "flex-row-reverse" : ""
-                  } gap-4`}
-                >
-                  <LanguageSwitcher />
-                  <ThemeToggle />
-                </div>
-                <div
-                  className={`flex items-center ${
-                    isRTL ? "flex-row-reverse" : ""
-                  } gap-2`}
-                >
-                  <div className="relative" ref={searchRef}>
-                    <Button
-                      variant="ghost"
-                      size="icon"
-                      aria-label={t("buttons.search")}
-                      className="text-foreground hover:bg-foreground/10 dark:text-foreground dark:hover:bg-foreground/10"
-                      onClick={() => setShowSearch(!showSearch)}
-                    >
-                      <SearchIcon className="h-5 w-5" />
-                    </Button>
-                  </div>
-                  <Button
-                    variant="default"
-                    size="icon"
-                    className="bg-chart-2 text-primary-foreground hover:bg-chart-2/90 dark:bg-chart-2 dark:hover:bg-chart-2/80"
-                  >
-                    <User className="h-5 w-5" />
-                  </Button>
-                </div>
+                {isRTL ? (
+                  <>
+                    {session ? (
+                      <Button
+                        onClick={() => signOut()}
+                        variant="ghost"
+                        size="icon"
+                        aria-label="Sign Out"
+                        className="text-primary-foreground bg-chart-2 dark:text-primary-foreground dark:bg-foreground"
+                      >
+                        <LogOut className="h-5 w-5" />
+                      </Button>
+                    ) : (
+                      <Link
+                        href="/auth/signIn"
+                        prefetch
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        <Button
+                          variant="ghost"
+                          size="icon"
+                          aria-label="Sign In"
+                          className="text-primary-foreground bg-chart-2 dark:text-primary-foreground dark:bg-chart-2"
+                        >
+                          <User className="h-5 w-5" />
+                        </Button>
+                      </Link>
+                    )}
+                    <div className="relative" ref={searchRef}>
+                      <Button
+                        variant="ghost"
+                        size="icon"
+                        aria-label="Search"
+                        className="text-foreground hover:bg-foreground/10 dark:text-foreground dark:hover:bg-foreground/10"
+                        onClick={() => setShowSearch(!showSearch)}
+                      >
+                        <SearchIcon className="h-5 w-5" />
+                      </Button>
+                    </div>
+
+                    {showSearch && (
+                      <div className="pt-2 w-full">
+                        <Input
+                          type="text"
+                          placeholder="Search..."
+                          value={searchQuery}
+                          onChange={(e) => setSearchQuery(e.target.value)}
+                          autoFocus
+                          className="w-full h-12 text-lg"
+                          dir="rtl"
+                        />
+                      </div>
+                    )}
+                    <ThemeToggle />
+                    <LanguageSwitcher />
+                  </>
+                ) : (
+                  <>
+                    <LanguageSwitcher />
+                    <ThemeToggle />
+                    <div className="relative" ref={searchRef}>
+                      <Button
+                        variant="ghost"
+                        size="icon"
+                        aria-label="Search"
+                        className="text-foreground hover:bg-foreground/10 dark:text-foreground dark:hover:bg-foreground/10"
+                        onClick={() => setShowSearch(!showSearch)}
+                      >
+                        <SearchIcon className="h-5 w-5" />
+                      </Button>
+                    </div>
+
+                    {showSearch && (
+                      <div className="pt-2 w-full">
+                        <Input
+                          type="text"
+                          placeholder="Search..."
+                          value={searchQuery}
+                          onChange={(e) => setSearchQuery(e.target.value)}
+                          autoFocus
+                          className="w-full h-12 text-lg"
+                          dir="ltr"
+                        />
+                      </div>
+                    )}
+
+                    {session ? (
+                      <Button
+                        onClick={() => signOut()}
+                        variant="ghost"
+                        size="icon"
+                        aria-label="Sign Out"
+                        className="text-primary-foreground bg-chart-2 dark:text-primary-foreground dark:bg-foreground"
+                      >
+                        <LogOut className="h-5 w-5" />
+                      </Button>
+                    ) : (
+                      <Link
+                        href="/auth/signIn"
+                        prefetch
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        <Button
+                          variant="ghost"
+                          size="icon"
+                          aria-label="Sign In"
+                          className="text-primary-foreground bg-chart-2 dark:text-primary-foreground dark:bg-chart-2"
+                        >
+                          <User className="h-5 w-5" />
+                        </Button>
+                      </Link>
+                    )}
+                  </>
+                )}
               </div>
-              {showSearch && (
-                <div className="pt-2">
-                  <Input
-                    type="text"
-                    placeholder={t("buttons.search")}
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    autoFocus
-                    className="w-full h-12 text-lg"
-                    dir={isRTL ? "rtl" : "ltr"}
-                  />
-                </div>
-              )}
             </div>
           </div>
         </div>
