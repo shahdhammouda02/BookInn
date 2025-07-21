@@ -19,6 +19,7 @@ import { Input } from "@/components/ui/input";
 import LanguageSwitcher from "@/components/languageSwitcher";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { useSession, signOut } from "next-auth/react";
+import { usePathname } from "next/navigation";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -37,6 +38,7 @@ const NavBar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const searchRef = useRef<HTMLDivElement>(null);
   const { data: session, status } = useSession();
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -74,24 +76,29 @@ const NavBar = () => {
           className={`gap-3 ${isRTL ? "flex-row-reverse" : ""}`}
         >
           {["welcome", "whyBookInn", "rooms", "offers", "contact"].map(
-            (item) => (
-              <NavigationMenuItem key={item}>
-                <NavigationMenuLink
-                  href={`/${locale}${item === "welcome" ? "" : `/${item}`}`}
-                  className={`${navigationMenuTriggerStyle()} relative px-2 w-auto after:content-[''] after:absolute after:bottom-0 ${
-                    isRTL
-                      ? "after:right-1/2 after:translate-x-1/2"
-                      : "after:left-1/2 after:-translate-x-1/2"
-                  } after:w-[calc(100%-1rem)] after:h-[2px] ${
-                    item === "welcome"
-                      ? "after:bg-chart-2"
-                      : "after:bg-chart-2 after:opacity-0 hover:after:opacity-100"
-                  } text-foreground hover:text-foreground/80 dark:text-foreground dark:hover:text-foreground/80`}
-                >
-                  {t(`navItems.${item}`)}
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-            )
+            (item) => {
+              const href = `/${locale}${item === "welcome" ? "" : `/${item}`}`;
+              const isActive = pathname === href;
+
+              return (
+                <NavigationMenuItem key={item}>
+                  <NavigationMenuLink
+                    href={href}
+                    className={`${navigationMenuTriggerStyle()} relative px-2 w-auto after:content-[''] after:absolute after:bottom-0 ${
+                      isRTL
+                        ? "after:right-1/2 after:translate-x-1/2"
+                        : "after:left-1/2 after:-translate-x-1/2"
+                    } after:w-[calc(100%-1rem)] after:h-[2px] ${
+                      isActive
+                        ? "after:bg-chart-2 after:opacity-100"
+                        : "after:bg-chart-2 after:opacity-0 hover:after:opacity-100"
+                    } text-foreground hover:text-foreground/80 dark:text-foreground dark:hover:text-foreground/80`}
+                  >
+                    {t(`navItems.${item}`)}
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+              );
+            }
           )}
         </NavigationMenuList>
       </NavigationMenu>
@@ -232,16 +239,27 @@ const NavBar = () => {
               </div>
 
               {["welcome", "whyBookInn", "rooms", "offers", "contact"].map(
-                (item) => (
-                  <Link
-                    key={item}
-                    href={`/${locale}${item === "welcome" ? "" : `/${item}`}`}
-                    className="block w-full text-start px-2 text-lg py-3 text-foreground hover:text-chart-2 dark:text-foreground dark:hover:text-chart-2"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    {t(`navItems.${item}`)}
-                  </Link>
-                )
+                (item) => {
+                  const href = `/${locale}${
+                    item === "welcome" ? "" : `/${item}`
+                  }`;
+                  const isActive = pathname === href;
+
+                  return (
+                    <Link
+                      key={item}
+                      href={href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className={`inline-block w-fit text-lg py-2 px-2 transition-all duration-200 ${
+                        isActive
+                          ? "text-chart-2 border-b-2 border-chart-2"
+                          : "text-foreground hover:text-chart-2 dark:text-foreground dark:hover:text-chart-2"
+                      }`}
+                    >
+                      {t(`navItems.${item}`)}
+                    </Link>
+                  );
+                }
               )}
 
               <div
