@@ -58,52 +58,60 @@ const NavBar = () => {
 
   return (
     <section
-      className="min-h-[80px] flex items-center px-2 sm:px-8 w-full mx-auto justify-between"
+      className="min-h-[80px] flex items-center px-2 sm:px-8 w-full mx-auto justify-between relative"
       dir={isRTL ? "rtl" : "ltr"}
     >
-      <Link href="#" className="flex" prefetch>
-        <Image
-          src={logoSrc}
-          alt={t("logoAlt")}
-          width={100}
-          height={100}
-          className="dark:invert-[0.2]"
-        />
-      </Link>
+      <div className="flex-shrink-0 z-20">
+        <Link href="#" className="flex" prefetch>
+          <Image
+            src={logoSrc}
+            alt={t("logoAlt")}
+            width={100}
+            height={100}
+            className="dark:invert-[0.2]"
+          />
+        </Link>
+      </div>
 
-      <NavigationMenu className="hidden md:flex mx-4">
-        <NavigationMenuList
-          className={`gap-3 ${isRTL ? "flex-row-reverse" : ""}`}
-        >
-          {["welcome", "whyBookInn", "rooms", "offers", "contact"].map(
-            (item) => {
-              const href = `/${locale}${item === "welcome" ? "" : `/${item}`}`;
-              const isActive = pathname === href;
+      <nav
+        className={`absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 hidden md:flex z-10`}
+      >
+        <NavigationMenu>
+          <NavigationMenuList
+            className={`gap-3 flex ${isRTL ? "flex-row-reverse" : ""}`}
+          >
+            {["welcome", "whyBookInn", "rooms", "offers", "contact"].map(
+              (item) => {
+                const href = `/${locale}${
+                  item === "welcome" ? "" : `/${item}`
+                }`;
+                const isActive = pathname === href;
 
-              return (
-                <NavigationMenuItem key={item}>
-                  <NavigationMenuLink
-                    href={href}
-                    className={`${navigationMenuTriggerStyle()} relative px-2 w-auto after:content-[''] after:absolute after:bottom-0 ${
-                      isRTL
-                        ? "after:right-1/2 after:translate-x-1/2"
-                        : "after:left-1/2 after:-translate-x-1/2"
-                    } after:w-[calc(100%-1rem)] after:h-[2px] ${
-                      isActive
-                        ? "after:bg-chart-2 after:opacity-100"
-                        : "after:bg-chart-2 after:opacity-0 hover:after:opacity-100"
-                    } text-foreground hover:text-foreground/80 dark:text-foreground dark:hover:text-foreground/80`}
-                  >
-                    {t(`navItems.${item}`)}
-                  </NavigationMenuLink>
-                </NavigationMenuItem>
-              );
-            }
-          )}
-        </NavigationMenuList>
-      </NavigationMenu>
+                return (
+                  <NavigationMenuItem key={item}>
+                    <NavigationMenuLink
+                      href={href}
+                      className={`${navigationMenuTriggerStyle()} relative px-2 w-auto after:content-[''] after:absolute after:bottom-0 ${
+                        isRTL
+                          ? "after:right-1/2 after:translate-x-1/2"
+                          : "after:left-1/2 after:-translate-x-1/2"
+                      } after:w-[calc(100%-1rem)] after:h-[2px] ${
+                        isActive
+                          ? "after:bg-chart-2 after:opacity-100"
+                          : "after:bg-chart-2 after:opacity-0 hover:after:opacity-100"
+                      } text-foreground hover:text-foreground/80 dark:text-foreground dark:hover:text-foreground/80`}
+                    >
+                      {t(`navItems.${item}`)}
+                    </NavigationMenuLink>
+                  </NavigationMenuItem>
+                );
+              }
+            )}
+          </NavigationMenuList>
+        </NavigationMenu>
+      </nav>
 
-      <div className="hidden md:flex items-center gap-2">
+      <div className="hidden md:flex items-center gap-2 z-20">
         <LanguageSwitcher />
         <ThemeToggle />
         <div className="relative" ref={searchRef}>
@@ -186,10 +194,11 @@ const NavBar = () => {
         )}
       </div>
 
+      {/* mobile */}
       <Button
         variant="ghost"
         size="icon"
-        className="md:hidden text-foreground hover:bg-foreground/10 dark:text-foreground dark:hover:bg-foreground/10"
+        className="md:hidden text-foreground hover:bg-foreground/10 dark:text-foreground dark:hover:bg-foreground/10 z-20"
         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
       >
         {mobileMenuOpen ? (
@@ -210,7 +219,7 @@ const NavBar = () => {
               className="flex flex-col space-y-6"
               dir={isRTL ? "rtl" : "ltr"}
             >
-              <div className={`flex ${isRTL ? "justify-end" : "justify-end"}`}>
+              <div className="flex justify-end">
                 <X
                   className="h-6 w-6 cursor-pointer mb-7"
                   onClick={() => setMobileMenuOpen(false)}
