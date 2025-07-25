@@ -169,6 +169,74 @@
       "button": "ابدأ الحجز الآن"
     }
   },
+  "Rooms":{
+  "RoomsSection": {
+    "heading": "استكشف مساحاتنا",
+    "description": "اختر من بين الغرف والقاعات والمطاعم ومساحات الاسترخاء — جميعها مصممة خصيصًا لتلبية احتياجاتك.",
+    "loading": "جارٍ التحميل...",
+    "error": "لا توجد بيانات متاحة.",
+    "categories": {
+      "room": {
+        "label": "غرف الفندق",
+        "subtitle": "استمتع بإقامة فاخرة تلبي كل احتياجات راحتك."
+      },
+      "hall": {
+        "label": "قاعات المناسبات",
+        "subtitle": "احجز القاعة المثالية لاجتماعاتك أو مناسباتك الخاصة."
+      },
+      "restaurant": {
+        "label": "المطاعم",
+        "subtitle": "تذوق أشهى الأطباق في أجواء أنيقة ومريحة."
+      },
+      "relaxing": {
+        "label": "مساحات استرخاء",
+        "subtitle": "استرخِ في أماكن هادئة ومريحة تنعش روحك."
+      }
+    }
+  },
+   "RoomDetails": {
+    "loading": "جارٍ التحميل...",
+    "notFound": "لم يتم العثور على النتائج",
+    "bookNow": "احجز الآن",
+    "description": "اكتشف إقامة مريحة وفاخرة. سواء كنت تخطط لاجتماع عمل، أو فعالية عائلية، أو أمسية رومانسية، فإن هذا {category} يوفر البيئة المثالية للحظات لا تُنسى.",
+    "categories": {
+      "room": "غرفة",
+      "hall": "قاعة",
+      "restaurant": "مطعم",
+      "relaxing": "مساحة استرخاء"
+    },
+    "titles": {
+      "premiumTitle": "بوكين بريميوم",
+      "deluxeTitle": "بوكين ديلوكس",
+      "standardTitle": "بوكين ستاندرد",
+      "luxuryTitle": "بوكين لاكشري",
+      "boutiqueTitle": "بوكين بوتيك",
+      "resortTitle": "بوكين ريزورت",
+      "seasideTitle": "بوكين سي سايد",
+      "urbanTitle": "بوكين أوربان",
+      "gardenViewTitle": "بوكين جاردن فيو",
+      "classicTitle": "بوكين كلاسيك",
+      "villaTitle": "بوكين فيلا",
+      "grandTitle": "بوكين جراند",
+      "oasisTitle": "بوكين أواسيز"
+    },
+    "locations": {
+      "downtownLocation": "وسط المدينة",
+      "beachfrontLocation": "شاطئ البحر",
+      "suburbsLocation": "الضواحي",
+      "mountainViewLocation": "إطلالة الجبل",
+      "historicDistrictLocation": "الحي التاريخي",
+      "lakesideLocation": "جانب البحيرة",
+      "oceanfrontLocation": "واجهة المحيط",
+      "cityCenterLocation": "وسط المدينة",
+      "botanicalGardensLocation": "منطقة الحدائق النباتية",
+      "oldTownLocation": "المدينة القديمة",
+      "modernLuxuryLocation": "حديث وفاخر",
+      "mainSquareLocation": "الساحة الرئيسية",
+      "desertRetreatLocation": "منتجع الصحراء"
+    }
+  }
+},
   "Footer": {
     "about": "منصة مبتكرة لحجوزات الفنادق تجمع بين:",
     "values": {

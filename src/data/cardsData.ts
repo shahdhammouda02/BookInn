@@ -21,6 +21,7 @@ export const hotelsData: Hotel[] = [
     rating: 4.5,
     isFavorite: false,
     price: "$120/night",
+    category: "room",
   },
   {
     id: 2,
@@ -30,6 +31,7 @@ export const hotelsData: Hotel[] = [
     rating: 4.7,
     isFavorite: true,
     price: "$90/night",
+    category: "room",
   },
   {
     id: 3,
@@ -39,6 +41,7 @@ export const hotelsData: Hotel[] = [
     rating: 4.2,
     isFavorite: false,
     price: "$170/night",
+    category: "room",
   },
   {
     id: 4,
@@ -48,6 +51,7 @@ export const hotelsData: Hotel[] = [
     rating: 4.8,
     isFavorite: false,
     price: "$220/night",
+    category: "relaxing",
   },
   {
     id: 5,
@@ -57,6 +61,7 @@ export const hotelsData: Hotel[] = [
     rating: 4.3,
     isFavorite: false,
     price: "$110/night",
+    category: "restaurant",
   },
   {
     id: 6,
@@ -66,6 +71,7 @@ export const hotelsData: Hotel[] = [
     rating: 4.6,
     isFavorite: false,
     price: "$150/night",
+    category: "hall",
   },
   {
     id: 7,
@@ -75,6 +81,7 @@ export const hotelsData: Hotel[] = [
     rating: 4.4,
     isFavorite: false,
     price: "$185/night",
+    category: "relaxing",
   },
   {
     id: 8,
@@ -84,6 +91,7 @@ export const hotelsData: Hotel[] = [
     rating: 4.1,
     isFavorite: false,
     price: "$95/night",
+    category: "restaurant",
   },
   {
     id: 9,
@@ -93,6 +101,7 @@ export const hotelsData: Hotel[] = [
     rating: 4.3,
     isFavorite: false,
     price: "$290/night",
+    category: "room",
   },
   {
     id: 10,
@@ -102,6 +111,7 @@ export const hotelsData: Hotel[] = [
     rating: 4.2,
     isFavorite: false,
     price: "$100/night",
+    category: "relaxing",
   },
   {
     id: 11,
@@ -111,6 +121,7 @@ export const hotelsData: Hotel[] = [
     rating: 4.3,
     isFavorite: false,
     price: "$110/night",
+    category: "restaurant",
   },
   {
     id: 12,
@@ -120,6 +131,7 @@ export const hotelsData: Hotel[] = [
     rating: 4.6,
     isFavorite: false,
     price: "$450/night",
+    category: "relaxing",
   },
   {
     id: 13,
@@ -129,6 +141,7 @@ export const hotelsData: Hotel[] = [
     rating: 4.9,
     isFavorite: false,
     price: "$250/night",
+    category: "room",
   },
   {
     id: 14,
@@ -138,6 +151,7 @@ export const hotelsData: Hotel[] = [
     rating: 4.4,
     isFavorite: false,
     price: "$140/night",
+    category: "relaxing",
   },
   {
     id: 15,
@@ -147,6 +161,7 @@ export const hotelsData: Hotel[] = [
     rating: 4.3,
     isFavorite: false,
     price: "$290/night",
+    category: "room",
   },
   {
     id: 16,
@@ -156,6 +171,7 @@ export const hotelsData: Hotel[] = [
     rating: 4.6,
     isFavorite: false,
     price: "$150/night",
+    category: "hall",
   },
   {
     id: 17,
@@ -165,6 +181,7 @@ export const hotelsData: Hotel[] = [
     rating: 4.6,
     isFavorite: false,
     price: "$450/night",
+    category: "relaxing",
   },
   {
     id: 18,
@@ -174,5 +191,6 @@ export const hotelsData: Hotel[] = [
     rating: 4.5,
     isFavorite: false,
     price: "$120/night",
+    category: "room",
   },
 ];

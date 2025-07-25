@@ -8,6 +8,7 @@ export interface Hotel {
   rating: number;
   isFavorite: boolean;
   price: string;
+  category: string
 }
 
 export interface HotelCardProps {

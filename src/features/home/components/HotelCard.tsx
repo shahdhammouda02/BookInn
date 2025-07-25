@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { Star, Heart, MapPin } from "lucide-react";
 import {
   Card,
@@ -17,14 +18,20 @@ export const HotelCard = ({ hotel, isRTL = false }: HotelCardProps) => {
   const t = useTranslations("Home.HotelCard");
   const [isFavorite, setIsFavorite] = useState(hotel.isFavorite);
   const [imageError, setImageError] = useState(false);
+  const router = useRouter()
 
   const toggleFavorite = (e: React.MouseEvent) => {
     e.stopPropagation();
     setIsFavorite(!isFavorite);
   };
 
+  const goToDetails = ()=>{
+    router.push(`/rooms/${hotel.id}`)
+  }
+
   return (
     <Card
+    onClick={goToDetails}
       className={`transition-all duration-300 hover:scale-[1.02] hover:shadow-lg focus:scale-[1.02] focus:shadow-lg outline-none border-border h-full flex flex-col group overflow-hidden ${
         isRTL ? "rtl" : ""
       }`}
