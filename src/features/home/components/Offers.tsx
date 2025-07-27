@@ -10,7 +10,7 @@ const Offers = ({ isRTL = false }: offersProp) => {
   const t = useTranslations("Home.Offers");
   return (
     <div
-      className={` mt-8 sm:mt-12 md:mt-14 lg:mt-18 
+      className={`mt-25
         px-4 sm:px-6 md:px-8 lg:px-10 
         py-4 sm:py-5 md:py-6 lg:py-7 
         justify-center text-center 

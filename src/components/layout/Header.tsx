@@ -12,6 +12,39 @@ const Header = () => {
   const locale = useLocale();
   const isRTL = locale === "ar";
 
+  const quickLinks = [
+  {
+    key: "rooms",
+    icon: Bed,
+    variant: "default"
+  },
+  {
+    key: "restaurant",
+    icon: Restaurant,
+    variant: "secondary"
+  },
+  {
+    key: "fitness",
+    icon: Fitness,
+    variant: "secondary"
+  },
+  {
+    key: "events",
+    icon: Event,
+    variant: "secondary"
+  },
+  {
+    key: "parking",
+    icon: Car,
+    variant: "secondary"
+  },
+  {
+    key: "service",
+    icon: Service,
+    variant: "secondary"
+  }
+];
+
   return (
     <header
       className="mx-auto px-4 sm:px-8 bg-header-background min-h-[650px] sm:min-h-[500px] relative overflow-hidden dark:bg-header-background"
@@ -19,9 +52,10 @@ const Header = () => {
     >
       <NavBar />
 
-      {/* Hero section */}
       <section
-        className="absolute left-4 sm:left-1/2 top-[45%] sm:top-1/2 -translate-y-1/2 sm:-translate-x-1/2 w-[calc(100%-2rem)] sm:w-full px-4 sm:px-8 text-left sm:text-center space-y-4 max-w-4xl"
+        className={`absolute left-4 sm:left-1/2 top-[45%] sm:top-1/2 -translate-y-1/2 sm:-translate-x-1/2 w-[calc(100%-2rem)] sm:w-full px-4 sm:px-8 space-y-4 max-w-4xl ${
+          isRTL ? "text-right sm:text-center" : "text-left sm:text-center"
+        }`}
         dir={isRTL ? "rtl" : "ltr"}
       >
         <h1 className="text-4xl sm:text-4xl md:text-5xl font-bold tracking-tight text-foreground dark:text-foreground">
@@ -33,77 +67,31 @@ const Header = () => {
       </section>
 
       {/* Quick Links */}
-      <section
-        className={`absolute left-4 sm:left-1/2 -translate-x-0 sm:-translate-x-1/2 top-[73%] sm:top-3/4 w-[calc(100%-2rem)] sm:w-full px-4 sm:px-8 max-w-4xl flex flex-wrap gap-1 sm:gap-4 justify-start sm:justify-center ${
-          isRTL ? "flex-row-reverse" : ""
-        }`}
-        dir={isRTL ? "rtl" : "ltr"}
-      >
-        <Button
-          size="lg"
-          variant="default"
-          className="bg-chart-2 text-primary-foreground hover:bg-chart-2/90 dark:bg-chart-2 dark:hover:bg-chart-2/80"
-          aria-label={t("quickLinks.rooms")}
-        >
-          <Bed className="h-8 w-8" />
-          <span className="hidden sm:inline ml-1">{t("quickLinks.rooms")}</span>
-        </Button>
-        <Button
-          size="lg"
-          variant="secondary"
-          className="bg-background/80 text-foreground hover:bg-background dark:bg-background/80 dark:text-foreground"
-          aria-label={t("quickLinks.restaurant")}
-        >
-          <Restaurant className="h-8 w-8" />
-          <span className="hidden sm:inline ml-1">
-            {t("quickLinks.restaurant")}
-          </span>
-        </Button>
-        <Button
-          size="lg"
-          variant="secondary"
-          className="bg-background/80 text-foreground hover:bg-background dark:bg-background/80 dark:text-foreground"
-          aria-label={t("quickLinks.fitness")}
-        >
-          <Fitness className="h-8 w-8" />
-          <span className="hidden sm:inline ml-1">
-            {t("quickLinks.fitness")}
-          </span>
-        </Button>
-        <Button
-          size="lg"
-          variant="secondary"
-          className="bg-background/80 text-foreground hover:bg-background dark:bg-background/80 dark:text-foreground"
-          aria-label={t("quickLinks.events")}
-        >
-          <Event className="h-8 w-8" />
-          <span className="hidden sm:inline ml-1">
-            {t("quickLinks.events")}
-          </span>
-        </Button>
-        <Button
-          size="lg"
-          variant="secondary"
-          className="bg-background/80 text-foreground hover:bg-background dark:bg-background/80 dark:text-foreground"
-          aria-label={t("quickLinks.parking")}
-        >
-          <Car className="h-8 w-8" />
-          <span className="hidden sm:inline ml-1">
-            {t("quickLinks.parking")}
-          </span>
-        </Button>
-        <Button
-          size="lg"
-          variant="secondary"
-          className="bg-background/80 text-foreground hover:bg-background dark:bg-background/80 dark:text-foreground"
-          aria-label={t("quickLinks.service")}
-        >
-          <Service className="h-8 w-8" />
-          <span className="hidden sm:inline ml-1">
-            {t("quickLinks.service")}
-          </span>
-        </Button>
-      </section>
+   <section
+  className={`absolute left-4 sm:left-1/2 -translate-x-0 sm:-translate-x-1/2 top-[73%] sm:top-3/4 w-[calc(100%-2rem)] sm:w-full px-4 sm:px-8 max-w-4xl flex flex-wrap gap-1 sm:gap-4 justify-start sm:justify-center ${
+    isRTL ? "justify-end" : "justify-start sm:justify-center"
+  }`}
+  dir={isRTL ? "rtl" : "ltr"}
+>
+  {quickLinks.map((link) => (
+    <Button
+      key={link.key}
+      size="lg"
+      variant={link.variant as "default" | "secondary"}
+      className={
+        link.variant === "default"
+          ? "bg-chart-2 text-primary-foreground hover:bg-chart-2/90 dark:bg-chart-2 dark:hover:bg-chart-2/80"
+          : "bg-background/80 text-foreground hover:bg-background dark:bg-background/80 dark:text-foreground"
+      }
+      aria-label={t(`quickLinks.${link.key}`)}
+    >
+      <link.icon className="h-8 w-8" />
+      <span className="hidden sm:inline me-1">
+        {t(`quickLinks.${link.key}`)}
+      </span>
+    </Button>
+  ))}
+</section>
     </header>
   );
 };

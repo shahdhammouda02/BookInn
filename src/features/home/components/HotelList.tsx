@@ -47,6 +47,7 @@ export const HotelList = ({ isRTL = false }: { isRTL?: boolean }) => {
               rating: hotel.rating ?? 0,
               isFavorite: hotel.isFavorite ?? false,
               price: hotel.price ?? "N/A",
+              category: hotel.category
             }}
             isRTL={isRTL}
           />

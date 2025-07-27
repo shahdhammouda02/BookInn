@@ -30,7 +30,7 @@ const MostRequestedServices: React.FC<{ isRTL?: boolean }> = ({ isRTL = false })
   }
 
   return (
-    <section className="mt-18 py-12 bg-background border-0" dir={isRTL ? "rtl" : "ltr"}>
+    <section className="mt-20 py-12 bg-background border-0" dir={isRTL ? "rtl" : "ltr"}>
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-center mb-8">{t("sectionTitle")}</h2>
 
