@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { useTranslations } from "next-intl";
+import { useRouter } from "next/navigation";
 
 interface offersProp {
   isRTL?: boolean;
@@ -8,6 +9,7 @@ interface offersProp {
 
 const Offers = ({ isRTL = false }: offersProp) => {
   const t = useTranslations("Home.Offers");
+  const router = useRouter();
   return (
     <div
       className={`mt-25
@@ -34,13 +36,16 @@ const Offers = ({ isRTL = false }: offersProp) => {
           size="lg"
           variant="secondary"
           className="bg-chart-2 text-primary-foreground text-md hover:bg-chart-2/80 dark:bg-chart-2 dark:text-primary-foreground"
+          onClick={() => router.push("/auth/signIn")}
         >
           {t("buttons.signIn")}
         </Button>
+
         <Button
           size="lg"
           variant="secondary"
           className="bg-background text-foreground text-md hover:bg-background/80 dark:bg-background dark:text-foreground"
+          onClick={() => router.push("/auth/register")}
         >
           {t("buttons.register")}
         </Button>
