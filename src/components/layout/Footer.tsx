@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BookInnLogo, HeaderLogo } from "../../../public/images/page";
 import { useTheme } from "next-themes";
 import Link from "next/link";
@@ -8,9 +8,18 @@ import { Facebook, Twitter, Instagram, Youtube } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 const Footer = ({ isRTL = false }: { isRTL?: boolean }) => {
-  const { theme } = useTheme();
-  const logoSrc = theme === "dark" ? HeaderLogo : BookInnLogo;
   const t = useTranslations("Footer");
+
+  const { resolvedTheme } = useTheme();
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) return null;
+
+  const logoSrc = resolvedTheme === "dark" ? HeaderLogo : BookInnLogo;
 
   return (
     <footer

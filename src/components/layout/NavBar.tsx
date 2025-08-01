@@ -28,15 +28,21 @@ import {
 } from "../ui/dropdown-menu";
 
 const NavBar = () => {
-  const t = useTranslations("Header");
-  const { theme } = useTheme();
+  // theme
+  const { resolvedTheme } = useTheme();
+  const [isMounted, setIsMounted] = useState(false);
+
+  // language
   const locale = useLocale();
   const isRTL = locale === "ar";
-  const logoSrc = theme === "dark" ? HeaderLogo : BookInnLogo;
+  const t = useTranslations("Header");
+
+  // serch
   const [showSearch, setShowSearch] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const searchRef = useRef<HTMLDivElement>(null);
+
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { data: session, status } = useSession();
   const pathname = usePathname();
 
@@ -55,6 +61,14 @@ const NavBar = () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) return null;
+
+  const logoSrc = resolvedTheme === "dark" ? HeaderLogo : BookInnLogo;
 
   return (
     <section
