@@ -10,8 +10,8 @@ import {
 export const mockOffers = [
   {
     id: 1,
-    title: "Luxury Retreat: Premium Stay",
-    description: "Unwind in style with luxurious amenities and city views.",
+    titleKey: "offer1.title",
+    descriptionKey: "offer1.description",
     price: 95,
     originalPrice: 120,
     image: image1,
@@ -20,8 +20,8 @@ export const mockOffers = [
   },
   {
     id: 2,
-    title: "Beachfront Deluxe Hotel",
-    description: "Wake up to the sound of waves in a deluxe beachfront suite.",
+    titleKey: "offer2.title",
+    descriptionKey: "offer2.description",
     price: 75,
     originalPrice: 90,
     image: image2,
@@ -30,8 +30,8 @@ export const mockOffers = [
   },
   {
     id: 3,
-    title: "Mountain View Luxury",
-    description: "Experience serenity and nature from your private balcony.",
+    titleKey: "offer3.title",
+    descriptionKey: "offer3.description",
     price: 190,
     originalPrice: 220,
     image: image4,
@@ -40,8 +40,8 @@ export const mockOffers = [
   },
   {
     id: 4,
-    title: "Boutique Historic Stay",
-    description: "Charming design meets history in this central boutique.",
+    titleKey: "offer4.title",
+    descriptionKey: "offer4.description",
     price: 85,
     originalPrice: 110,
     image: image5,
@@ -50,8 +50,8 @@ export const mockOffers = [
   },
   {
     id: 5,
-    title: "Relaxing Lakeside Resort",
-    description: "A tranquil escape surrounded by peaceful lake scenery.",
+    titleKey: "offer5.title",
+    descriptionKey: "offer5.description",
     price: 125,
     originalPrice: 150,
     image: image6,
@@ -60,8 +60,8 @@ export const mockOffers = [
   },
   {
     id: 6,
-    title: "Suburban Standard Room",
-    description: "Comfortable and affordable rooms in a quiet neighborhood.",
+    titleKey: "offer6.title",
+    descriptionKey: "offer6.description",
     price: 150,
     originalPrice: 170,
     image: image3,

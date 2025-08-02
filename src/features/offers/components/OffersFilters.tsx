@@ -1,15 +1,23 @@
-"use client"
-import { Button } from '@/components/ui/button'
-import React from 'react'
+"use client";
+import { Button } from "@/components/ui/button";
+import { useTranslations } from "next-intl";
+import React from "react";
 
 const OffersFilters = () => {
+  const t = useTranslations("Offers.Filters");
   return (
-     <div className="flex flex-wrap gap-3">
-      <Button className="border rounded-md px-3 py-1 text-sm">Free Wi-Fi</Button>
-      <Button className="border rounded-md px-3 py-1 text-sm">Parking</Button>
-      <Button className="border rounded-md px-3 py-1 text-sm">Pool</Button>
+    <div className="flex flex-wrap gap-3">
+      <Button className="border rounded-md px-3 py-1 text-sm">
+        {t("wifi")}
+      </Button>
+      <Button className="border rounded-md px-3 py-1 text-sm">
+        {t("parking")}
+      </Button>
+      <Button className="border rounded-md px-3 py-1 text-sm">
+        {t("pool")}
+      </Button>
     </div>
-  )
-}
+  );
+};
 
-export default OffersFilters
+export default OffersFilters;

@@ -2,8 +2,8 @@ import { StaticImageData } from "next/image";
 
 export interface Offer{
   id: number,
-  title: string;
-  description: string;
+  titleKey: string;
+  descriptionKey: string;
   price: number;
   image: StaticImageData;
   rating: number;

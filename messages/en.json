@@ -169,72 +169,119 @@
     }
   },
   "Rooms": {
-  "RoomsSection": {
-    "heading": "Explore Our Spaces",
-    "description": "Choose from a variety of rooms, halls, restaurants, and relaxing spots — all tailored to your needs.",
-    "loading": "Loading...",
-    "error": "No data available.",
-    "categories": {
-      "room": {
-        "label": "Hotel Rooms",
-        "subtitle": "Enjoy luxury stays that meet all your comfort needs."
+    "RoomsSection": {
+      "heading": "Explore Our Spaces",
+      "description": "Choose from a variety of rooms, halls, restaurants, and relaxing spots — all tailored to your needs.",
+      "loading": "Loading...",
+      "error": "No data available.",
+      "categories": {
+        "room": {
+          "label": "Hotel Rooms",
+          "subtitle": "Enjoy luxury stays that meet all your comfort needs."
+        },
+        "hall": {
+          "label": "Event Halls",
+          "subtitle": "Book the perfect hall for your meetings or special events."
+        },
+        "restaurant": {
+          "label": "Restaurants",
+          "subtitle": "Taste exquisite dishes in an elegant and relaxing atmosphere."
+        },
+        "relaxing": {
+          "label": "Relaxation Spaces",
+          "subtitle": "Recharge in peaceful, cozy relaxation areas."
+        }
+      }
+    },
+    "RoomDetails": {
+      "loading": "Loading...",
+      "notFound": "Not Found",
+      "bookNow": "Book Now",
+      "description": "Discover a relaxing and luxurious stay. Whether you're planning a business meeting, a family event, or a romantic evening, this {category} offers the perfect environment for unforgettable moments.",
+      "categories": {
+        "room": "room",
+        "hall": "hall",
+        "restaurant": "restaurant",
+        "relaxing": "relaxation space"
       },
-      "hall": {
-        "label": "Event Halls",
-        "subtitle": "Book the perfect hall for your meetings or special events."
+      "titles": {
+        "premiumTitle": "BookInn Premium",
+        "deluxeTitle": "BookInn Deluxe",
+        "standardTitle": "BookInn Standard",
+        "luxuryTitle": "BookInn Luxury",
+        "boutiqueTitle": "BookInn Boutique",
+        "resortTitle": "BookInn Resort",
+        "seasideTitle": "BookInn Seaside",
+        "urbanTitle": "BookInn Urban",
+        "gardenViewTitle": "BookInn Garden View",
+        "classicTitle": "BookInn Classic",
+        "villaTitle": "BookInn Villa",
+        "grandTitle": "BookInn Grand",
+        "oasisTitle": "BookInn Oasis"
       },
-      "restaurant": {
-        "label": "Restaurants",
-        "subtitle": "Taste exquisite dishes in an elegant and relaxing atmosphere."
-      },
-      "relaxing": {
-        "label": "Relaxation Spaces",
-        "subtitle": "Recharge in peaceful, cozy relaxation areas."
+      "locations": {
+        "downtownLocation": "Downtown, City",
+        "beachfrontLocation": "Beachfront, Coastal",
+        "suburbsLocation": "Suburbs, City",
+        "mountainViewLocation": "Mountain View",
+        "historicDistrictLocation": "Historic District",
+        "lakesideLocation": "Lakeside",
+        "oceanfrontLocation": "Oceanfront",
+        "cityCenterLocation": "City Center",
+        "botanicalGardensLocation": "Botanical Gardens Area",
+        "oldTownLocation": "Old Town Quarter",
+        "modernLuxuryLocation": "Modern and Luxury",
+        "mainSquareLocation": "Main Square",
+        "desertRetreatLocation": "Desert Retreat"
       }
     }
   },
-   "RoomDetails": {
-    "loading": "Loading...",
-    "notFound": "Not Found",
-    "bookNow": "Book Now",
-    "description": "Discover a relaxing and luxurious stay. Whether you're planning a business meeting, a family event, or a romantic evening, this {category} offers the perfect environment for unforgettable moments.",
-    "categories": {
-      "room": "room",
-      "hall": "hall",
-      "restaurant": "restaurant",
-      "relaxing": "relaxation space"
+  "Offers": {
+    "headerTitle": "Exclusive Hotel Offers",
+    "headerSubtitle": "Discover the best deals on top-rated hotels.",
+    "Filters": {
+      "wifi": "Free Wi-Fi",
+      "parking": "Parking",
+      "pool": "Pool"
     },
-    "titles": {
-      "premiumTitle": "BookInn Premium",
-      "deluxeTitle": "BookInn Deluxe",
-      "standardTitle": "BookInn Standard",
-      "luxuryTitle": "BookInn Luxury",
-      "boutiqueTitle": "BookInn Boutique",
-      "resortTitle": "BookInn Resort",
-      "seasideTitle": "BookInn Seaside",
-      "urbanTitle": "BookInn Urban",
-      "gardenViewTitle": "BookInn Garden View",
-      "classicTitle": "BookInn Classic",
-      "villaTitle": "BookInn Villa",
-      "grandTitle": "BookInn Grand",
-      "oasisTitle": "BookInn Oasis"
+    "Sort": {
+      "placeholder": "Sort by",
+      "priceLow": "Price: Low to High",
+      "priceHigh": "Price: High to Low",
+      "popular": "Most Popular"
     },
-    "locations": {
-      "downtownLocation": "Downtown, City",
-      "beachfrontLocation": "Beachfront, Coastal",
-      "suburbsLocation": "Suburbs, City",
-      "mountainViewLocation": "Mountain View",
-      "historicDistrictLocation": "Historic District",
-      "lakesideLocation": "Lakeside",
-      "oceanfrontLocation": "Oceanfront",
-      "cityCenterLocation": "City Center",
-      "botanicalGardensLocation": "Botanical Gardens Area",
-      "oldTownLocation": "Old Town Quarter",
-      "modernLuxuryLocation": "Modern and Luxury",
-      "mainSquareLocation": "Main Square",
-      "desertRetreatLocation": "Desert Retreat"
-    }
-}
+    "Grid": {
+      "bookNow": "Book Now",
+      "validUntil": "Offer valid until {date}"
+    },
+    "List": {
+      "offer1": {
+        "title": "Luxury Retreat: Premium Stay",
+        "description": "Unwind in style with luxurious amenities and city views."
+      },
+      "offer2": {
+        "title": "Beachfront Deluxe Hotel",
+        "description": "Wake up to the sound of waves in a deluxe beachfront suite."
+      },
+      "offer3": {
+        "title": "Mountain View Luxury",
+        "description": "Experience serenity and nature from your private balcony."
+      },
+      "offer4": {
+        "title": "Boutique Historic Stay",
+        "description": "Charming design meets history in this central boutique."
+      },
+      "offer5": {
+        "title": "Relaxing Lakeside Resort",
+        "description": "A tranquil escape surrounded by peaceful lake scenery."
+      },
+      "offer6": {
+        "title": "Suburban Standard Room",
+        "description": "Comfortable and affordable rooms in a quiet neighborhood."
+      }
+    },
+    "errorLoading": "Failed to load offers. Please try again later.",
+    "noOffers": "No offers found."
   },
   "Footer": {
     "about": "An innovative hotel booking platform that combines:",
