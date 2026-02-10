@@ -283,6 +283,23 @@
     "errorLoading": "Failed to load offers. Please try again later.",
     "noOffers": "No offers found."
   },
+  "Contact": {
+    "title": "Contact Us",
+    "description": "We’re here to help you anytime. Reach out through any channel below.",
+    "email": { "title": "Email Us" },
+    "phone": { "title": "Call Us" },
+    "location": {
+      "title": "Our Location",
+      "value": "Palestine"
+    },
+    "form": {
+      "title": "Send Us a Message",
+      "name": "Your Name",
+      "email": "Your Email",
+      "message": "Write your message here...",
+      "submit": "Send Message"
+    }
+  },
   "Footer": {
     "about": "An innovative hotel booking platform that combines:",
     "values": {
