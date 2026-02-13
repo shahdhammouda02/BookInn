@@ -72,7 +72,7 @@ const NavBar = () => {
 
   return (
     <section
-      className="min-h-[80px] flex items-center px-2 sm:px-8 w-full mx-auto justify-between relative"
+      className="min-h-[80px] flex items-center px-2 sm:px-8 w-full mx-auto justify-between relative bg-header-background dark:bg-header-background"
       dir={isRTL ? "rtl" : "ltr"}
     >
       <div className="flex-shrink-0 z-20">
