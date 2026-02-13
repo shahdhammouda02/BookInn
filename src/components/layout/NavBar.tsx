@@ -1,7 +1,9 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import { BookInnLogo, HeaderLogo } from "../../../public/images/page";
+import  BookInnLogo from "../../../public/images/BookInn-logo.png";
+import  HeaderLogo from "../../../public/images/header-logo.png";
+
 import Image from "next/image";
 import Link from "next/link";
 import { useTheme } from "next-themes";
@@ -37,7 +39,7 @@ const NavBar = () => {
   const isRTL = locale === "ar";
   const t = useTranslations("Header");
 
-  // serch
+  // search
   const [showSearch, setShowSearch] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const searchRef = useRef<HTMLDivElement>(null);
@@ -72,17 +74,17 @@ const NavBar = () => {
 
   return (
     <section
-      className="min-h-[80px] flex items-center px-2 sm:px-8 w-full mx-auto justify-between relative bg-header-background dark:bg-header-background"
+      className="min-h-20 flex items-center px-2 sm:px-8 w-full mx-auto justify-between relative bg-header-background dark:bg-header-background"
       dir={isRTL ? "rtl" : "ltr"}
     >
-      <div className="flex-shrink-0 z-20">
+      <div className="shrink-0 z-20">
         <Link href="#" className="flex" prefetch>
           <Image
             src={logoSrc}
             alt={t("logoAlt")}
             width={100}
             height={100}
-            className="dark:invert-[0.2]"
+            // className="dark:invert-[0.2]"
           />
         </Link>
       </div>
@@ -109,7 +111,7 @@ const NavBar = () => {
                         isRTL
                           ? "after:right-1/2 after:translate-x-1/2"
                           : "after:left-1/2 after:-translate-x-1/2"
-                      } after:w-[calc(100%-1rem)] after:h-[2px] ${
+                      } after:w-[calc(100%-1rem)] after:h-0.5 ${
                         isActive
                           ? "after:bg-chart-2 after:opacity-100"
                           : "after:bg-chart-2 after:opacity-0 hover:after:opacity-100"
@@ -226,7 +228,7 @@ const NavBar = () => {
         <div
           className={`md:hidden fixed w-full max-w-[65%] inset-y-0 ${
             isRTL ? "left-0" : "right-0"
-          } top-0 z-50 bg-background/95 dark:bg-background/70 backdrop-blur supports-[backdrop-filter]:bg-background/60`}
+          } top-0 z-50 bg-background/95 dark:bg-background/70 backdrop-blur supports-backdrop-filter:bg-background/60`}
         >
           <div className="container mx-auto px-4 py-6">
             <div
